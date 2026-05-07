@@ -3,19 +3,19 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 current_phase: 2
-status: ready_to_plan
+status: ready_to_execute
 last_updated: "2026-05-07T00:00:00.000Z"
 progress:
   total_phases: 4
   completed_phases: 1
-  total_plans: 5
+  total_plans: 7
   completed_plans: 0
   percent: 25
 ---
 
 # Project State — Scopal Firm Website
 
-**Status:** Ready to plan
+**Status:** Ready to execute
 **Current Phase:** 2
 **Last Updated:** 2026-05-07
 
@@ -30,7 +30,7 @@ See: .planning/PROJECT.md
 | # | Phase | Status | Requirements |
 |---|-------|--------|--------------|
 | 1 | Foundation + Live Skeleton | Not started | FOUND-01..07 (7) |
-| 2 | Homepage + Conversion Spine | Not started | HOME-01..07 (7) |
+| 2 | Homepage + Conversion Spine | Planned (2 plans, ready to execute) | HOME-01..07 (7) |
 | 3 | Firm Substance — People, Practice Areas, Pricing | Not started | PRAC-01..05, TEAM-01..04, PRICE-01..03 (12) |
 | 4 | Lead Capture + Content + Launch Hardening | Not started | FORM-01..06, BLOG-01..05, SEO-01..05, LEGAL-01..04, SEC-01..05, PERF-01..03 (28) |
 
@@ -78,12 +78,17 @@ See: .planning/PROJECT.md
 ## Accumulated Context
 
 **Decisions:** See "Key Decisions" above (D1–D17). Log new ones in `.planning/DECISIONS.md` per `.claude/CLAUDE.md`.
-**Todos:** None active until Phase 1 planning starts.
-**Blockers:** None.
+**Todos:** None active.
+**Blockers:** Logo files must exist in `public/images/logos/` before 02-01-PLAN.md executes (D-08). See blocking checkpoint in 02-01-PLAN.md.
+
+## Phase 2 Planning Summary (2026-05-07)
+
+- **02-01-PLAN.md** (Wave 1) — Header nav update + `/contact` placeholder. `autonomous: false` — logo checkpoint blocks execution until Scott commits logo files.
+- **02-02-PLAN.md** (Wave 2, depends on 02-01) — Full StoryBrand homepage: 7 section components + WebSiteSchema + BaseLayout patch + `index.astro` replacement. `autonomous: true`.
 
 ## Session Continuity
 
-- Next action: `/gsd-plan-phase 2`
+- Next action: `/gsd-execute-phase 2`
 - Working directory: `/Users/spalmer/Documents/Claude Code/Scopal Website`
 - Repo: https://github.com/spalmer47/scopal
 - Read on session start (per `.claude/CLAUDE.md`): `.planning/FIRM_BRIEF.md`, `.planning/LAW_FIRM_WEBSITE_GUIDE.md`.

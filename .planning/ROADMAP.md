@@ -55,7 +55,13 @@ Plans:
   3. A "Schedule a Consultation" / "Book a Fit Call" CTA is reachable from the top, middle, and bottom of the homepage; the strings "Contact Us" and "Free Consultation" never appear.
   4. The trust strip in the first viewport displays prior in-house employer marks (uPerform, Ancile Solutions), bar admissions, and association affiliations (HeyCounsel, InHoused) — no client logo wall.
   5. Google Rich Results Test validates `LegalService` (with `areaServed: US`) and `WebSite` (with `SearchAction`) JSON-LD on `/`, and Lighthouse mobile scores ≥ 90 with LCP < 2.0s and CLS < 0.05.
-**Plans:** TBD
+**Plans:** 2 plans
+Plans:
+**Wave 1**
+- [ ] 02-01-PLAN.md — Update Header.astro (nav links, "Book a Fit Call" CTA, mobile hamburger); create placeholder /contact page
+
+**Wave 2** *(blocked on Wave 1 completion)*
+- [ ] 02-02-PLAN.md — WebSiteSchema.astro + BaseLayout patch + all 7 homepage section components + full index.astro replacement
 **UI hint:** yes
 
 ### Phase 3: Firm Substance — People, Practice Areas, Pricing
@@ -93,7 +99,7 @@ Plans:
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation + Live Skeleton | 5/5 | Complete    | 2026-05-07 |
-| 2. Homepage + Conversion Spine | 0/0 | Not started | — |
+| 2. Homepage + Conversion Spine | 0/2 | Planned     | — |
 | 3. Firm Substance — People, Practice Areas, Pricing | 0/0 | Not started | — |
 | 4. Lead Capture + Content + Launch Hardening | 0/0 | Not started | — |
 
