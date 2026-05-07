@@ -1,9 +1,12 @@
 ---
 phase: 02-homepage-conversion-spine
 verified: 2026-05-07T00:00:00Z
-status: human_needed
-score: 6/7 must-haves verified
-overrides_applied: 0
+status: passed
+score: 7/7 must-haves verified
+overrides_applied: 2
+overrides:
+  - HOME-04: bar admissions omitted from trust strip — accepted by project owner (2026-05-07); bar admissions present in footer
+  - HOME-03: proactive insight at section 3 — accepted by project owner (2026-05-07); CONTEXT.md D-03 interpretation confirmed
 gaps:
 human_verification:
   - test: "HOME-04 bar admissions scope gap — decision required"
