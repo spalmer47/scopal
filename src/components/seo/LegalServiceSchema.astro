@@ -1,0 +1,27 @@
+---
+import { FIRM, ATTORNEYS } from '../../lib/constants';
+const scott = ATTORNEYS['scott-palmer'];
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'LegalService',
+  name: FIRM.legalName,
+  url: FIRM.url,
+  email: FIRM.email,
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: FIRM.address.addressLocality,
+    addressRegion: FIRM.address.addressRegion,
+    addressCountry: FIRM.address.addressCountry,
+  },
+  areaServed: {
+    '@type': FIRM.areaServed.type,
+    name: FIRM.areaServed.name,
+  },
+  employee: {
+    '@type': 'Person',
+    name: scott.name,
+    jobTitle: scott.role,
+  },
+};
+---
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

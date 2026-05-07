@@ -1,0 +1,13 @@
+---
+import BaseLayout from './BaseLayout.astro';
+interface Props {
+  title: string;
+  description: string;
+  ogImage?: string;
+  ogType?: 'website' | 'article' | 'profile';
+  noindex?: boolean;
+  emitOrgSchema?: boolean;
+}
+const props = Astro.props;
+---
+<BaseLayout {...props}><slot /></BaseLayout>
