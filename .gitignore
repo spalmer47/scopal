@@ -1,25 +1,23 @@
-# build output
+# build
 dist/
-# generated types
 .astro/
+.vercel/
 
 # dependencies
 node_modules/
 
-# logs
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-
-
-# environment variables
+# secrets — NEVER commit
 .env
-.env.production
+.env.local
+.env.*.local
 
-# macOS-specific files
+# OS
 .DS_Store
+Thumbs.db
 
-# jetbrains setting folder
+# editors
+.vscode/
 .idea/
-.vercel
+
+# legacy / one-off backups
+index.html.legacy.bak
