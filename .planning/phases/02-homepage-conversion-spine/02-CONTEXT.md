@@ -104,7 +104,7 @@ Ship the StoryBrand homepage that converts a SaaS founder in the first viewport 
 - `LegalServiceSchema.astro` — already wired to homepage; no changes needed for Phase 2
 - `constants.ts` → `FIRM.email` — use for the mailto link on placeholder `/contact` page
 - `constants.ts` → `FIRM.responsibleAttorney`, `FIRM.areaServed` — use in JSON-LD components
-- `global.css` `@theme` tokens — use `brand-orange-500` for primary CTAs, `brand-blue-900` for headings, `brand-blue-500` for accents
+- `global.css` `@theme` tokens — use `brand-blue-500` for primary CTA backgrounds (hover: `brand-blue-600`), `brand-orange-500` for decorative accents only (wordmark, step-circle ring — never for CTA or body text)
 
 ### Established Patterns
 - **JSON-LD via component:** New `WebSiteSchema.astro` must follow the `<script type="application/ld+json" set:html={JSON.stringify(schema)} />` pattern — never inline JSON-LD in page files
