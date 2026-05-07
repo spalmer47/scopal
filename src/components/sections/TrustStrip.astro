@@ -1,0 +1,35 @@
+---
+// Logos in public/images/logos/ per CONTEXT.md D-06, D-08.
+// All four logo files confirmed present at execution time:
+// uperform.svg, ancile-solutions.svg, heycounsel.svg, inhoused.svg
+// Using <img> tags for all logos. Static paths — not processed through astro:assets (SVG brand marks).
+---
+<section aria-label="Background and affiliations" class="bg-surface py-8 border-b border-border">
+  <div class="mx-auto max-w-[1200px] px-md md:px-lg lg:px-xl">
+    <div class="flex flex-col md:flex-row md:items-center md:gap-12">
+
+      <!-- Group 1: Prior in-house experience -->
+      <div class="flex flex-col gap-6">
+        <p class="text-sm text-ink-muted uppercase tracking-[0.05em]">Prior in-house experience</p>
+        <div class="flex items-center gap-6 flex-wrap">
+          <img src="/images/logos/uperform.svg" alt="uPerform logo" height="32" class="h-8 w-auto object-contain" />
+          <img src="/images/logos/ancile-solutions.svg" alt="Ancile Solutions logo" height="32" class="h-8 w-auto object-contain" />
+        </div>
+      </div>
+
+      <!-- Vertical divider (desktop) / horizontal rule (mobile) -->
+      <div class="hidden md:block w-px h-12 bg-border flex-shrink-0"></div>
+      <hr class="md:hidden my-6 border-border" />
+
+      <!-- Group 2: Professional associations -->
+      <div class="flex flex-col gap-6">
+        <p class="text-sm text-ink-muted uppercase tracking-[0.05em]">Professional associations</p>
+        <div class="flex items-center gap-6 flex-wrap">
+          <img src="/images/logos/heycounsel.svg" alt="HeyCounsel logo" height="32" class="h-8 w-auto object-contain" />
+          <img src="/images/logos/inhoused.svg" alt="InHoused logo" height="32" class="h-8 w-auto object-contain" />
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

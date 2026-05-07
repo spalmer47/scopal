@@ -1,0 +1,63 @@
+---
+// No props — step data is locked in CONTEXT.md D-04, D-05.
+const steps = [
+  {
+    number: 1,
+    name: 'Schedule a fit call',
+    description: 'Tell us about your company and what’s on your mind. It’s a 30-minute conversation, not a sales pitch.',
+  },
+  {
+    number: 2,
+    name: 'We scope your legal needs',
+    description: 'We map your priorities, clarify scope, and tailor your engagement so you’re covered where it matters most.',
+  },
+  {
+    number: 3,
+    name: 'You get a dedicated legal partner',
+    description: 'Scott becomes your General Counsel — embedded in your business, available when you need him, and building a deeper understanding of your company over time.',
+  },
+];
+---
+<section class="bg-surface-muted py-12 md:py-16">
+  <div class="mx-auto max-w-[1200px] px-md md:px-lg lg:px-xl">
+
+    <h2 class="font-display font-semibold text-2xl md:text-[28px] text-ink leading-[1.25] text-center mb-8">
+      Here's how it works
+    </h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+      {steps.map((step) => (
+        <div class="bg-surface border border-border rounded-lg p-6 flex flex-col gap-4">
+          <!-- Step number circle -->
+          <div
+            class="w-12 h-12 rounded-full bg-ink flex items-center justify-center flex-shrink-0 border-2 border-brand-orange-500"
+            aria-hidden="true"
+          >
+            <span class="text-white font-body font-semibold text-xl leading-none">{step.number}</span>
+          </div>
+          <!-- Step prefix label -->
+          <p class="text-sm text-ink-muted">Step {step.number}</p>
+          <!-- Step name -->
+          <h3 class="font-display font-semibold text-2xl md:text-[28px] text-ink leading-[1.25] -mt-2">
+            {step.name}
+          </h3>
+          <!-- Step description -->
+          <p class="text-base leading-relaxed text-ink">
+            {step.description}
+          </p>
+        </div>
+      ))}
+    </div>
+
+    <!-- Mid-page persistent CTA (HOME-05: CTA at mid-page) -->
+    <div class="mt-10 text-center">
+      <a
+        href="/contact"
+        class="inline-block bg-brand-blue-500 hover:bg-brand-blue-600 text-white text-base font-semibold py-3 px-6 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-brand-blue-500 focus:ring-offset-2"
+      >
+        Book a Fit Call
+      </a>
+    </div>
+
+  </div>
+</section>
