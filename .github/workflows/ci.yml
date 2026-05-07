@@ -43,6 +43,9 @@ jobs:
       - name: Internal link check (linkinator)
         run: npm run linkcheck
 
+      - name: Sync Chrome and ChromeDriver versions (axe-core requirement)
+        run: npx browser-driver-manager install chrome
+
       - name: Accessibility scan (axe-core)
         run: npm run a11y
 
