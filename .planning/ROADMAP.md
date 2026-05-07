@@ -9,7 +9,7 @@ A SaaS founder lands on the site, recognizes their situation, and gets in touch.
 ## Phases
 
 - [x] **Phase 1: Foundation + Live Skeleton** — Astro 6 / Tailwind v4 / Vercel deploy with security headers, CI guardrails, layouts, constants, and a placeholder homepage live at scopalfirm.com (completed 2026-05-07)
-- [ ] **Phase 2: Homepage + Conversion Spine** — StoryBrand homepage, persistent CTA, trust strip, and the "proactive vs reactive" insight that makes a SaaS founder say "this is for me"
+- [x] **Phase 2: Homepage + Conversion Spine** — StoryBrand homepage, persistent CTA, trust strip, and the "proactive vs reactive" insight that makes a SaaS founder say "this is for me" (completed 2026-05-07)
 - [ ] **Phase 3: Firm Substance — People, Practice Areas, Pricing** — Three practice area pages, Scott's attorney bio, Rachel's team page, and the pricing/engagement model page
 - [ ] **Phase 4: Lead Capture + Content + Launch Hardening** — Contact form (with ABA 477R + 7 server controls), blog system with one published post, full SEO/legal/security/performance hardening for public launch
 
@@ -61,7 +61,7 @@ Plans:
 - [x] 02-01-PLAN.md — Update Header.astro (nav links, "Book a Fit Call" CTA, mobile hamburger); create placeholder /contact page
 
 **Wave 2** *(blocked on Wave 1 completion)*
-- [ ] 02-02-PLAN.md — WebSiteSchema.astro + BaseLayout patch + all 7 homepage section components + full index.astro replacement
+- [x] 02-02-PLAN.md — WebSiteSchema.astro + BaseLayout patch + all 7 homepage section components + full index.astro replacement
 **UI hint:** yes
 
 ### Phase 3: Firm Substance — People, Practice Areas, Pricing
@@ -99,7 +99,7 @@ Plans:
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation + Live Skeleton | 5/5 | Complete    | 2026-05-07 |
-| 2. Homepage + Conversion Spine | 1/2 | In progress | — |
+| 2. Homepage + Conversion Spine | 2/2 | Complete    | 2026-05-07 |
 | 3. Firm Substance — People, Practice Areas, Pricing | 0/0 | Not started | — |
 | 4. Lead Capture + Content + Launch Hardening | 0/0 | Not started | — |
 

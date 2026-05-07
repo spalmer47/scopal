@@ -4,19 +4,19 @@ milestone: v1.0
 milestone_name: milestone
 current_phase: 2
 status: in_progress
-last_updated: "2026-05-07T19:05:00.000Z"
+last_updated: "2026-05-07T19:15:00.000Z"
 progress:
   total_phases: 4
   completed_phases: 1
   total_plans: 7
-  completed_plans: 1
-  percent: 32
+  completed_plans: 2
+  percent: 43
 ---
 
 # Project State — Scopal Firm Website
 
-**Status:** In progress (02-01 complete, 02-02 next)
-**Current Phase:** 2
+**Status:** Phase 2 complete — both plans (02-01, 02-02) done. Phase 3 is next.
+**Current Phase:** 2 (complete)
 **Last Updated:** 2026-05-07
 
 ## Project Reference
@@ -30,7 +30,7 @@ See: .planning/PROJECT.md
 | # | Phase | Status | Requirements |
 |---|-------|--------|--------------|
 | 1 | Foundation + Live Skeleton | Not started | FOUND-01..07 (7) |
-| 2 | Homepage + Conversion Spine | Planned (2 plans, ready to execute) | HOME-01..07 (7) |
+| 2 | Homepage + Conversion Spine | Complete (2/2 plans done) | HOME-01..07 (7) |
 | 3 | Firm Substance — People, Practice Areas, Pricing | Not started | PRAC-01..05, TEAM-01..04, PRICE-01..03 (12) |
 | 4 | Lead Capture + Content + Launch Hardening | Not started | FORM-01..06, BLOG-01..05, SEO-01..05, LEGAL-01..04, SEC-01..05, PERF-01..03 (28) |
 
@@ -88,10 +88,11 @@ See: .planning/PROJECT.md
 
 ## Session Continuity
 
-- Next action: `/gsd-execute-phase 2` (run 02-02-PLAN.md — depends on 02-01 ✓)
+- Next action: `/gsd-execute-phase 3` (Phase 3 — Firm Substance: People, Practice Areas, Pricing)
 - Working directory: `/Users/spalmer/Documents/Claude Code/Scopal Website`
 - Repo: https://github.com/spalmer47/scopal
 - Read on session start (per `.claude/CLAUDE.md`): `.planning/FIRM_BRIEF.md`, `.planning/LAW_FIRM_WEBSITE_GUIDE.md`.
+- 02-02 completed: 3 tasks, 10 files, d7d348b / 44be1ff / fc57f8f
 
 ## Notes
 
