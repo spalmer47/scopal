@@ -12,13 +12,14 @@ A SaaS founder lands on the site, immediately recognizes their situation ("this 
 
 ### Validated
 
-<!-- Shipped and confirmed valuable. -->
-
-(None yet — ship to validate)
+- [x] Site scaffold with Astro 6 + Tailwind CSS v4, deployed to Vercel — Validated in Phase 1: Foundation + Live Skeleton (2026-05-07)
+- [x] SEO foundation: JSON-LD structured data (LegalService), meta tags, sitemap, robots.txt — Validated in Phase 1
+- [x] Legal disclaimers on all pages via layout (footer, ABA attorney advertising, UPL, no attorney-client) — Validated in Phase 1
+- [x] Security hardening: HTTP headers (CSP, X-Frame-Options, HSTS, etc.), secrets management — Validated in Phase 1
 
 ### Active
 
-- [ ] Site scaffold with Astro 6 + Tailwind CSS v4, deployed to Vercel
+- [ ] Homepage with StoryBrand-structured copy converting SaaS visitors into leads
 - [ ] Homepage with StoryBrand-structured copy converting SaaS visitors into leads
 - [ ] Practice area pages (Corporate Law, Outside GC / Fractional GC, Legal Executive Coaching)
 - [ ] Attorney bio page for Scott A. Palmer
@@ -68,4 +69,7 @@ A SaaS founder lands on the site, immediately recognizes their situation ("this 
 | Contact form backend TBD | Depends on Scott's intake workflow; options reviewed at that phase | — Pending |
 
 ---
+**Phase 1 complete (2026-05-07):** Walking Skeleton live at https://scopalfirm.com — Astro 6 + Tailwind v4, Vercel hosting, security headers, legal compliance layouts, CI pipeline.
+
 *Initialized: 2026-05-07 from FIRM_BRIEF.md via /hc-firm-site:setup + /gsd-new-project --auto*
+*Last updated: 2026-05-07*
