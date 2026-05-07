@@ -8,7 +8,7 @@ export default defineConfig({
   site: 'https://scopalfirm.com',
   output: 'static',
   adapter: vercel({
-    webAnalytics: { enabled: true },
+    webAnalytics: { enabled: false },
     imageService: true,
   }),
   integrations: [mdx(), sitemap()],
