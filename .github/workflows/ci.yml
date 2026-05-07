@@ -1,0 +1,59 @@
+# .github/workflows/ci.yml
+# Five-check merge gate for FOUND-05.
+# Runs on every pull request to main and on push to main.
+# All checks must pass to merge.
+
+name: CI
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+  pull-requests: read
+
+jobs:
+  build-and-check:
+    name: Build and quality gates
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository (full history for gitleaks)
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node.js 22 LTS
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Install dependencies (clean, locked)
+        run: npm ci
+
+      - name: Banned-words lint (D14 vocabulary)
+        run: npm run banned-words
+
+      - name: Build static site
+        run: npm run build
+
+      - name: Internal link check (linkinator)
+        run: npm run linkcheck
+
+      - name: Accessibility scan (axe-core)
+        run: npm run a11y
+
+      - name: Lighthouse CI (performance budgets)
+        uses: treosh/lighthouse-ci-action@v12
+        with:
+          configPath: ./.lighthouserc.json
+          uploadArtifacts: true
+          temporaryPublicStorage: true
+
+      - name: Secret scan (gitleaks)
+        uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

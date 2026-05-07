@@ -9,7 +9,10 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "banned-words": "node scripts/banned-words.mjs",
+    "linkcheck": "linkinator dist --silent --skip 'mailto:|tel:|^https?://'",
+    "a11y": "start-server-and-test 'astro preview --host 127.0.0.1 --port 4321' http://127.0.0.1:4321 'axe http://127.0.0.1:4321 --exit'"
   },
   "dependencies": {
     "@astrojs/mdx": "^5.0.4",
@@ -19,5 +22,11 @@
     "@tailwindcss/vite": "^4.2.4",
     "astro": "^6.3.1",
     "tailwindcss": "^4.2.4"
+  },
+  "devDependencies": {
+    "@axe-core/cli": "^4.11.3",
+    "@lhci/cli": "^0.15.1",
+    "linkinator": "^7.6.1",
+    "start-server-and-test": "^2.1.5"
   }
 }
