@@ -4,6 +4,7 @@ import Header from '../components/layout/Header.astro';
 import Footer from '../components/layout/Footer.astro';
 import SEO from '../components/seo/SEO.astro';
 import LegalServiceSchema from '../components/seo/LegalServiceSchema.astro';
+import WebSiteSchema from '../components/seo/WebSiteSchema.astro';
 
 interface Props {
   title: string;
@@ -12,16 +13,19 @@ interface Props {
   ogType?: 'website' | 'article' | 'profile';
   noindex?: boolean;
   emitOrgSchema?: boolean;
+  emitWebSiteSchema?: boolean;
 }
-const { title, description, ogImage, ogType = 'website', noindex = false, emitOrgSchema = false } = Astro.props;
+const { title, description, ogImage, ogType = 'website', noindex = false, emitOrgSchema = false, emitWebSiteSchema = false } = Astro.props;
 ---
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- TODO: Add Fraunces 600 preload link once woff2 file is committed to public/fonts/ -->
     <SEO {title} {description} {ogImage} {ogType} {noindex} />
     {emitOrgSchema && <LegalServiceSchema />}
+    {emitWebSiteSchema && <WebSiteSchema />}
   </head>
   <body class="min-h-screen flex flex-col bg-surface text-ink font-body">
     <a
