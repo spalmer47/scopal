@@ -1,1 +1,59 @@
+/* src/styles/global.css
+ * Tailwind v4 CSS-first config. Tokens here are consumed by every component via Tailwind utilities.
+ * Do NOT create tailwind.config.js or postcss.config.cjs — Tailwind v4 ignores them when @tailwindcss/vite is present.
+ *
+ * Authoritative source for these values: .planning/phases/01-foundation-live-skeleton/01-UI-SPEC.md
+ * Phase 1 / Plan 01.
+ */
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  /* COLOR — 60% surface / 30% ink / 10% accent. OKLCH per UI-SPEC §Color. */
+  --color-surface:           oklch(1 0 0);
+  --color-surface-muted:     oklch(0.985 0.005 240);
+  --color-ink:               oklch(0.22 0.04 250);
+  --color-ink-muted:         oklch(0.45 0.02 250);
+  --color-border:            oklch(0.92 0.01 240);
+
+  --color-brand-blue-500:    oklch(0.50 0.16 240);   /* primary CTA bg, focus ring */
+  --color-brand-blue-600:    oklch(0.42 0.17 240);   /* CTA hover/active */
+  --color-brand-orange-500:  oklch(0.70 0.18 50);    /* decorative accent ONLY — never body or links on white */
+
+  --color-destructive-600:   oklch(0.52 0.22 27);    /* reserved for Phase 4 form errors */
+
+  /* TYPOGRAPHY — UI-SPEC OVERRIDE: Fraunces is the display font (UI-SPEC overrides RESEARCH.md).
+   * Two families × two weights cap (D10). Body 400 + Display/strong 600. */
+  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+
+  /* SPACING — 8 named tokens. Includes 4xl=96px per UI checker requirement
+   * (desktop section padding on the placeholder homepage uses 96px). */
+  --spacing-xs:  4px;
+  --spacing-sm:  8px;
+  --spacing-md:  16px;
+  --spacing-lg:  24px;
+  --spacing-xl:  32px;
+  --spacing-2xl: 48px;
+  --spacing-3xl: 64px;
+  --spacing-4xl: 96px;
+
+  /* CONTAINER — page content max-width per UI-SPEC §Spacing. */
+  --container-page: 1200px;
+}
+
+@layer base {
+  html { font-family: var(--font-body); }
+  h1, h2, h3, h4, h5, h6 { font-family: var(--font-display); }
+
+  /* Honor reduced-motion from day one (UI-SPEC §Motion).
+   * Phase 1 ships no animations; this disables any future ones for users who request it. */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
