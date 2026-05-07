@@ -1,20 +1,93 @@
 ---
 import { FIRM } from '../../lib/constants';
 ---
-<header class="bg-surface border-b border-border">
+<header class="sticky top-0 z-50 bg-surface border-b border-border shadow-sm">
   <div class="mx-auto max-w-[1200px] px-md md:px-lg lg:px-xl h-[64px] md:h-[80px] flex items-center justify-between">
+
+    <!-- Logo / Wordmark -->
     <a
       href="/"
       aria-label={`${FIRM.shortName} — Home`}
-      class="font-display font-semibold text-[20px] md:text-[24px] text-ink hover:text-brand-blue-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue-500"
+      class="font-display font-semibold text-[20px] md:text-[24px] text-ink hover:text-brand-blue-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue-500 transition-colors"
     >
       {FIRM.shortName}
     </a>
-    <a
-      href={`mailto:${FIRM.email}`}
-      class="hidden md:inline-flex items-center bg-brand-blue-500 hover:bg-brand-blue-600 text-surface font-body font-semibold text-base px-[20px] py-[12px] rounded-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue-500"
+
+    <!-- Desktop nav + CTA (hidden on mobile) -->
+    <nav aria-label="Main navigation" class="hidden md:flex items-center gap-8">
+      <a href="/practice-areas" class="text-base text-ink hover:text-brand-blue-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue-500 transition-colors">Practice Areas</a>
+      <a href="/attorneys/scott-palmer" class="text-base text-ink hover:text-brand-blue-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue-500 transition-colors">Scott Palmer</a>
+      <a href="/pricing" class="text-base text-ink hover:text-brand-blue-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue-500 transition-colors">Pricing</a>
+      <a
+        href="/contact"
+        class="bg-brand-blue-500 hover:bg-brand-blue-600 text-white text-base font-semibold py-3 px-6 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-brand-blue-500 focus:ring-offset-2"
+      >
+        Book a Fit Call
+      </a>
+    </nav>
+
+    <!-- Mobile hamburger button (hidden on desktop) -->
+    <button
+      id="hamburger"
+      type="button"
+      aria-controls="mobile-nav"
+      aria-expanded="false"
+      aria-label="Open navigation menu"
+      class="md:hidden p-3 text-ink hover:text-ink-muted focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue-500"
     >
-      Schedule a Consultation
-    </a>
+      <!-- 3-bar hamburger icon — 20px wide, 2px strokes, 6px gap -->
+      <svg width="20" height="14" viewBox="0 0 20 14" fill="none" aria-hidden="true" focusable="false">
+        <rect y="0"  width="20" height="2" rx="1" fill="currentColor"/>
+        <rect y="6"  width="20" height="2" rx="1" fill="currentColor"/>
+        <rect y="12" width="20" height="2" rx="1" fill="currentColor"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile nav panel (starts hidden; toggled by <script> below) -->
+  <div
+    id="mobile-nav"
+    class="hidden md:hidden bg-surface border-b border-border"
+    role="navigation"
+    aria-label="Mobile navigation"
+  >
+    <div class="mx-auto max-w-[1200px] px-md py-6 flex flex-col gap-6">
+      <a href="/practice-areas" class="text-base text-ink hover:text-brand-blue-500 py-[12px] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue-500">Practice Areas</a>
+      <a href="/attorneys/scott-palmer" class="text-base text-ink hover:text-brand-blue-500 py-[12px] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue-500">Scott Palmer</a>
+      <a href="/pricing" class="text-base text-ink hover:text-brand-blue-500 py-[12px] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue-500">Pricing</a>
+      <a
+        href="/contact"
+        class="block w-full text-center bg-brand-blue-500 hover:bg-brand-blue-600 text-white text-base font-semibold py-3 px-6 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-brand-blue-500 focus:ring-offset-2"
+      >
+        Book a Fit Call
+      </a>
+    </div>
   </div>
 </header>
+
+<script>
+  const hamburger = document.getElementById('hamburger') as HTMLButtonElement | null;
+  const mobileNav = document.getElementById('mobile-nav') as HTMLElement | null;
+
+  if (hamburger && mobileNav) {
+    hamburger.addEventListener('click', () => {
+      const isOpen = hamburger.getAttribute('aria-expanded') === 'true';
+      hamburger.setAttribute('aria-expanded', String(!isOpen));
+      hamburger.setAttribute(
+        'aria-label',
+        isOpen ? 'Open navigation menu' : 'Close navigation menu'
+      );
+      mobileNav.classList.toggle('hidden');
+    });
+
+    // Close on Escape key (accessibility requirement per UI-SPEC)
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && hamburger.getAttribute('aria-expanded') === 'true') {
+        hamburger.setAttribute('aria-expanded', 'false');
+        hamburger.setAttribute('aria-label', 'Open navigation menu');
+        mobileNav.classList.add('hidden');
+        hamburger.focus();
+      }
+    });
+  }
+</script>
