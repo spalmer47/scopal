@@ -1,15 +1,32 @@
+---
+gsd_state_version: 1.0
+milestone: v1.0
+milestone_name: milestone
+current_phase: None started
+status: executing
+last_updated: "2026-05-07T18:28:47.585Z"
+progress:
+  total_phases: 4
+  completed_phases: 0
+  total_plans: 5
+  completed_plans: 0
+  percent: 0
+---
+
 # Project State — Scopal Firm Website
 
-**Status:** Planning complete — ready to execute
+**Status:** Ready to execute
 **Current Phase:** None started
 **Last Updated:** 2026-05-07
 
 ## Project Reference
+
 See: .planning/PROJECT.md
 **Core value:** A SaaS founder lands on the site, immediately recognizes their situation, and gets in touch.
 **Phases:** 4 total
 
 ## Phase Summary
+
 | # | Phase | Status | Requirements |
 |---|-------|--------|--------------|
 | 1 | Foundation + Live Skeleton | Not started | FOUND-01..07 (7) |
@@ -20,6 +37,7 @@ See: .planning/PROJECT.md
 **Coverage:** 47 / 47 v1 requirements mapped ✓
 
 ## Open Questions (from research)
+
 - **Q1:** Public street address for NAP (residential / registered agent / P.O. box)? — *Default if unanswered: ship `addressLocality: "Annandale"` + `addressRegion: "NJ"` only.*
 - **Q2:** Publish phone number or contact-form-only? — *Default: no phone; CTA = form.*
 - **Q3:** Contact form provider: Resend-only / Supabase+Resend / Formspree? — *Decide at Phase 4 contact-form planning.*
@@ -30,6 +48,7 @@ See: .planning/PROJECT.md
 - **Q8:** MD + NJ state-specific attorney-advertising disclaimer wording? — *Default: ship safe-baseline ABA 7.1/7.2; refine before launch.*
 
 ## Key Decisions (from research/SUMMARY.md)
+
 - **D1:** Astro 6 (`^6.3`) `output: 'static'` — `prerender = false` only on contact endpoint.
 - **D2:** Tailwind CSS v4 via `@tailwindcss/vite`; CSS-first config in `src/styles/global.css`. No `tailwind.config.js`. `@astrojs/tailwind` is deprecated.
 - **D3:** `@astrojs/vercel` adapter with `webAnalytics.enabled: true`, `imageService: true`, region `iad1`.
@@ -49,6 +68,7 @@ See: .planning/PROJECT.md
 - **D17:** Bar status copy: "Maryland (2009); New Jersey admission pending." Schema `barAdmissions[].status: 'active'|'pending'`. Site copy must never imply NJ active.
 
 ## Performance Metrics
+
 - Lighthouse mobile ≥ 90 (all page types at launch)
 - LCP < 2.0s
 - CLS < 0.05
@@ -56,17 +76,20 @@ See: .planning/PROJECT.md
 - Committed image source ceiling: 200 KB
 
 ## Accumulated Context
+
 **Decisions:** See "Key Decisions" above (D1–D17). Log new ones in `.planning/DECISIONS.md` per `.claude/CLAUDE.md`.
 **Todos:** None active until Phase 1 planning starts.
 **Blockers:** None.
 
 ## Session Continuity
+
 - Next action: `/gsd-plan-phase 1`
 - Working directory: `/Users/spalmer/Documents/Claude Code/Scopal Website`
 - Repo: https://github.com/spalmer47/scopal
 - Read on session start (per `.claude/CLAUDE.md`): `.planning/FIRM_BRIEF.md`, `.planning/LAW_FIRM_WEBSITE_GUIDE.md`.
 
 ## Notes
+
 - User is a practicing attorney with no coding background — explain commands and concepts in plain English before running them.
 - Tech stack (Astro 6 + Tailwind v4 + GitHub + Vercel) is non-negotiable.
 - ABA Formal Opinion 477R applies to the contact form and any lead storage.
