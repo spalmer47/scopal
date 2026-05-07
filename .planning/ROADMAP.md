@@ -28,14 +28,14 @@ A SaaS founder lands on the site, recognizes their situation, and gets in touch.
   3. CI runs on every PR and blocks merge on any of: banned-words lint hit, axe-core a11y violation, broken internal link, gitleaks secret detection, or Lighthouse performance budget breach.
   4. A page rendered through `BaseLayout` automatically shows the firm footer (NAP, attorney advertising line, jurisdictional UPL disclaimer) without the page author writing any disclaimer code.
   5. `src/lib/constants.ts`, `content.config.ts` (with `blog`, `practiceAreas`, `team` Zod schemas), and `.env.example` exist and are the single source of truth for firm data, content shape, and required env vars.
-**Plans:** 1/5 plans executed
+**Plans:** 3/5 plans executed
 Plans:
 **Wave 1**
 - [x] 01-01-PLAN.md — Bootstrap Astro 6 + Tailwind v4 + Vercel adapter; placeholder homepage builds locally
 
 **Wave 2** *(blocked on Wave 1 completion)*
-- [ ] 01-02-PLAN.md — Compliance core: constants.ts + BaseLayout/MarketingLayout + Header/Footer/FooterDisclaimer + SEO/LegalServiceSchema; placeholder homepage renders with disclaimers + JSON-LD
-- [ ] 01-03-PLAN.md — Security headers (vercel.json), secret hygiene (.gitignore + .env.example), content collections (content.config.ts + empty folders), robots.txt
+- [x] 01-02-PLAN.md — Compliance core: constants.ts + BaseLayout/MarketingLayout + Header/Footer/FooterDisclaimer + SEO/LegalServiceSchema; placeholder homepage renders with disclaimers + JSON-LD
+- [x] 01-03-PLAN.md — Security headers (vercel.json), secret hygiene (.gitignore + .env.example), content collections (content.config.ts + empty folders), robots.txt
 
 **Wave 3** *(blocked on Wave 2 completion)*
 - [ ] 01-04-PLAN.md — CI merge gate (.github/workflows/ci.yml + scripts/banned-words.mjs + .lighthouserc.json) running banned-words / axe-core / linkinator / gitleaks / Lighthouse
@@ -92,7 +92,7 @@ Plans:
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation + Live Skeleton | 1/5 | In Progress|  |
+| 1. Foundation + Live Skeleton | 3/5 | In Progress|  |
 | 2. Homepage + Conversion Spine | 0/0 | Not started | — |
 | 3. Firm Substance — People, Practice Areas, Pricing | 0/0 | Not started | — |
 | 4. Lead Capture + Content + Launch Hardening | 0/0 | Not started | — |
