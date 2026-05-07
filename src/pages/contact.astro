@@ -1,0 +1,26 @@
+---
+import MarketingLayout from '../layouts/MarketingLayout.astro';
+import { FIRM } from '../lib/constants';
+---
+<MarketingLayout
+  title="Contact — Annandale, NJ | Scopal Firm"
+  description="Reach out to Scott Palmer at Scopal Firm to start a conversation about fractional general counsel for your SaaS company."
+>
+  <div class="mx-auto max-w-prose px-md py-12 md:py-16">
+    <h1 class="font-display font-semibold text-4xl md:text-5xl text-ink leading-[1.15] mb-8">
+      Get in Touch
+    </h1>
+    <p class="text-base leading-relaxed text-ink mb-6">
+      The full contact form is on its way. In the meantime, reach out directly — Scott reads every message and responds within 2 business days.
+    </p>
+    <p class="text-base leading-relaxed text-ink">
+      Email Scott at{' '}
+      <a
+        href={`mailto:${FIRM.email}`}
+        class="text-ink underline underline-offset-2 hover:text-brand-blue-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue-500 transition-colors"
+      >
+        {FIRM.email}
+      </a>.
+    </p>
+  </div>
+</MarketingLayout>
