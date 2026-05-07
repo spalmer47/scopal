@@ -1,0 +1,20 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  ogImage?: string;
+  ogType?: string;
+  noindex?: boolean;
+}
+const { title, description, ogImage, ogType = 'website', noindex = false } = Astro.props;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+---
+<title>{title}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonicalURL.toString()} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:type" content={ogType} />
+<meta property="og:url" content={canonicalURL.toString()} />
+{ogImage && <meta property="og:image" content={ogImage} />}
+{noindex && <meta name="robots" content="noindex,nofollow" />}

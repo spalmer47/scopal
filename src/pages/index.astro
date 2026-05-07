@@ -1,15 +1,34 @@
 ---
-// Phase 1 / Plan 01 placeholder. Plan 02 replaces this file with a MarketingLayout-wrapped version.
+// src/pages/index.astro — Phase 1 placeholder homepage (replaced by Phase 2 StoryBrand homepage).
+// Copy strings locked by .planning/phases/01-foundation-live-skeleton/01-UI-SPEC.md (Copywriting Contract).
+// Layout token sources: --spacing-3xl (64px), --spacing-4xl (96px), brand-blue-500/600, surface, ink.
+import MarketingLayout from '../layouts/MarketingLayout.astro';
+import { FIRM } from '../lib/constants';
+
+const pageTitle = `${FIRM.shortName} — ${FIRM.address.addressLocality}, ${FIRM.address.addressRegion} | Business-Focused Legal Support`;
+const pageDescription =
+  'Scopal Firm is a fractional general counsel practice for SaaS companies. New site coming soon — reach out to Scott directly to start a conversation.';
 ---
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Scopal Firm — Annandale, NJ | Business-Focused Legal Support</title>
-  </head>
-  <body>
-    <h1>Scopal Firm</h1>
-    <p>Bootstrap placeholder — replaced in Plan 02.</p>
-  </body>
-</html>
+<MarketingLayout
+  title={pageTitle}
+  description={pageDescription}
+  emitOrgSchema={true}
+>
+  <section class="mx-auto max-w-prose px-md md:px-lg lg:px-xl pt-3xl pb-2xl md:pt-4xl md:pb-3xl text-center">
+    <h1 class="font-display font-semibold text-4xl md:text-5xl text-ink mb-lg">
+      {FIRM.shortName}
+    </h1>
+    <p class="font-display text-2xl md:text-[28px] text-ink-muted mb-lg">
+      Business-focused legal support for SaaS companies.
+    </p>
+    <p class="text-base leading-relaxed text-ink mb-xl">
+      A new Scopal Firm site is on the way. In the meantime, if you're a SaaS founder thinking about fractional general counsel, Scott would like to hear from you.
+    </p>
+    <a
+      href={`mailto:${FIRM.email}`}
+      class="inline-flex items-center bg-brand-blue-500 hover:bg-brand-blue-600 text-surface font-body font-semibold text-base px-[20px] py-[12px] rounded-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue-500"
+    >
+      Schedule a Consultation
+    </a>
+  </section>
+</MarketingLayout>

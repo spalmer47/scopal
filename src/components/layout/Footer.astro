@@ -1,0 +1,28 @@
+---
+import { FIRM, formatBarStatus } from '../../lib/constants';
+import FooterDisclaimer from '../legal/FooterDisclaimer.astro';
+const year = new Date().getFullYear();
+const barStatus = formatBarStatus();
+---
+<footer class="bg-ink text-surface mt-3xl">
+  <div class="mx-auto max-w-[1200px] px-md md:px-lg lg:px-xl pt-2xl pb-xl grid grid-cols-1 md:grid-cols-2 gap-xl">
+    <div class="space-y-sm">
+      <p class="font-display font-semibold text-base">{FIRM.legalName}</p>
+      <p class="text-sm">{FIRM.address.addressLocality}, {FIRM.address.addressRegion}</p>
+      <p class="text-sm">
+        <a
+          href={`mailto:${FIRM.email}`}
+          class="underline underline-offset-2 hover:text-brand-blue-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue-500"
+        >{FIRM.email}</a>
+      </p>
+      <p class="text-sm">Responsible attorney: {FIRM.responsibleAttorney}</p>
+      <p class="text-sm">{barStatus}</p>
+    </div>
+    <FooterDisclaimer />
+  </div>
+  <div class="border-t border-[oklch(0.30_0.04_250)]">
+    <p class="mx-auto max-w-[1200px] px-md md:px-lg lg:px-xl py-md text-sm">
+      &copy; {year} {FIRM.legalName}. All rights reserved.
+    </p>
+  </div>
+</footer>

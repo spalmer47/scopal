@@ -1,0 +1,20 @@
+---
+import { FIRM } from '../../lib/constants';
+---
+<header class="bg-surface border-b border-border">
+  <div class="mx-auto max-w-[1200px] px-md md:px-lg lg:px-xl h-[64px] md:h-[80px] flex items-center justify-between">
+    <a
+      href="/"
+      aria-label={`${FIRM.shortName} — Home`}
+      class="font-display font-semibold text-[20px] md:text-[24px] text-ink hover:text-brand-blue-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue-500"
+    >
+      {FIRM.shortName}
+    </a>
+    <a
+      href={`mailto:${FIRM.email}`}
+      class="hidden md:inline-flex items-center bg-brand-blue-500 hover:bg-brand-blue-600 text-surface font-body font-semibold text-base px-[20px] py-[12px] rounded-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue-500"
+    >
+      Schedule a Consultation
+    </a>
+  </div>
+</header>
