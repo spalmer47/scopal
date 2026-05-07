@@ -9,13 +9,13 @@
 
 ### Foundation & Infrastructure
 
-- [ ] **FOUND-01**: Astro 6 project scaffolded with Tailwind CSS v4 (`@tailwindcss/vite`) and `@astrojs/vercel` adapter, deployed to Vercel with auto-deploy on push to main
-- [ ] **FOUND-02**: `vercel.json` ships security headers on every response: CSP, X-Frame-Options, X-Content-Type-Options, Referrer-Policy, Permissions-Policy, HSTS
-- [ ] **FOUND-03**: `.env` and `.env.local` excluded from git; `.env.example` documents all required vars; gitleaks runs in CI to prevent secret commits
-- [ ] **FOUND-04**: `src/lib/constants.ts` is the single source of truth for firm NAP, bar admissions, and social URLs — consumed by JSON-LD, footer, and contact confirmation
-- [ ] **FOUND-05**: CI pipeline runs from Phase 1: banned-words lint, axe-core accessibility check, link checker, Lighthouse CI with performance budgets
-- [ ] **FOUND-06**: Content collections defined in `content.config.ts` for `blog`, `practiceAreas`, and `team` with Zod frontmatter schemas
-- [ ] **FOUND-07**: Layout hierarchy enforces compliance: `BaseLayout` → `MarketingLayout` / `BlogPostLayout` / `PracticeAreaLayout`; disclaimers injected by layouts, not page authors
+- [x] **FOUND-01**: Astro 6 project scaffolded with Tailwind CSS v4 (`@tailwindcss/vite`) and `@astrojs/vercel` adapter, deployed to Vercel with auto-deploy on push to main
+- [x] **FOUND-02**: `vercel.json` ships security headers on every response: CSP, X-Frame-Options, X-Content-Type-Options, Referrer-Policy, Permissions-Policy, HSTS
+- [x] **FOUND-03**: `.env` and `.env.local` excluded from git; `.env.example` documents all required vars; gitleaks runs in CI to prevent secret commits
+- [x] **FOUND-04**: `src/lib/constants.ts` is the single source of truth for firm NAP, bar admissions, and social URLs — consumed by JSON-LD, footer, and contact confirmation
+- [x] **FOUND-05**: CI pipeline runs from Phase 1: banned-words lint, axe-core accessibility check, link checker, Lighthouse CI with performance budgets
+- [x] **FOUND-06**: Content collections defined in `content.config.ts` for `blog`, `practiceAreas`, and `team` with Zod frontmatter schemas
+- [x] **FOUND-07**: Layout hierarchy enforces compliance: `BaseLayout` → `MarketingLayout` / `BlogPostLayout` / `PracticeAreaLayout`; disclaimers injected by layouts, not page authors
 
 ### Homepage
 
@@ -128,13 +128,13 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| FOUND-01 | Phase 1 | Pending |
-| FOUND-02 | Phase 1 | Pending |
-| FOUND-03 | Phase 1 | Pending |
-| FOUND-04 | Phase 1 | Pending |
-| FOUND-05 | Phase 1 | Pending |
-| FOUND-06 | Phase 1 | Pending |
-| FOUND-07 | Phase 1 | Pending |
+| FOUND-01 | Phase 1 | Complete |
+| FOUND-02 | Phase 1 | Complete |
+| FOUND-03 | Phase 1 | Complete |
+| FOUND-04 | Phase 1 | Complete |
+| FOUND-05 | Phase 1 | Complete |
+| FOUND-06 | Phase 1 | Complete |
+| FOUND-07 | Phase 1 | Complete |
 | HOME-01 | Phase 2 | Pending |
 | HOME-02 | Phase 2 | Pending |
 | HOME-03 | Phase 2 | Pending |

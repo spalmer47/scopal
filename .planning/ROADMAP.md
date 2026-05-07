@@ -92,7 +92,7 @@ Plans:
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation + Live Skeleton | 5/5 | Complete   | 2026-05-07 |
+| 1. Foundation + Live Skeleton | 5/5 | Complete    | 2026-05-07 |
 | 2. Homepage + Conversion Spine | 0/0 | Not started | — |
 | 3. Firm Substance — People, Practice Areas, Pricing | 0/0 | Not started | — |
 | 4. Lead Capture + Content + Launch Hardening | 0/0 | Not started | — |
