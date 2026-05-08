@@ -15,7 +15,7 @@ progress:
 
 # Project State — Scopal Firm Website
 
-**Status:** Ready to execute Phase 3 (5 plans)
+**Status:** Paused at checkpoint — Phase 3, Plan 03-00 Task 2 (Rachel's headshot)
 **Current Phase:** 3
 **Last Updated:** 2026-05-07
 
@@ -96,12 +96,14 @@ See: .planning/PROJECT.md
 
 ## Session Continuity
 
-- Next action: `/gsd-execute-phase 3` — execute Phase 3 (Firm Substance: People, Practice Areas, Pricing)
+- Paused at: 03-00-PLAN.md Task 2 — waiting for Rachel Palmer headshot to be committed to src/assets/team/rachel-palmer.jpg
+- Resume signal: "headshots ready" — once both headshots are committed, run `/gsd-execute-phase 3` to continue with Wave 1
 - Phase 3 planning complete: 2026-05-07 — 5 plans, 3 waves, verified by plan checker
 - Phase 3 context gathered: 2026-05-07 — see `03-CONTEXT.md`
 - Working directory: `/Users/spalmer/Documents/Claude Code/Scopal Website`
 - Repo: https://github.com/spalmer47/scopal
 - Read on session start (per `.claude/CLAUDE.md`): `.planning/FIRM_BRIEF.md`, `.planning/LAW_FIRM_WEBSITE_GUIDE.md`.
+- 03-00 Task 1 completed: 1 file, commit 62629f6 (Scott's headshot optimized 296 KB → 44 KB)
 - 02-02 completed: 3 tasks, 10 files, d7d348b / 44be1ff / fc57f8f
 
 ## Notes

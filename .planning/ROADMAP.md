@@ -78,7 +78,7 @@ Plans:
 **Plans:** 5 plans
 Plans:
 **Wave 0** *(blocking checkpoint — Rachel's headshot must be committed before Wave 1)*
-- [ ] 03-00-PLAN.md — Headshot prerequisite: optimize Scott's headshot (296 KB → ≤200 KB, src/assets/team/); blocking checkpoint for Rachel's headshot commit
+- [~] 03-00-PLAN.md — Headshot prerequisite: Task 1 done (Scott's headshot 296 KB → 44 KB, commit 62629f6); PAUSED at Task 2 awaiting Rachel's headshot
 
 **Wave 1a**
 - [ ] 03-01-PLAN.md — Infrastructure: coaching collection (content.config.ts), 4 schema components (FAQSchema, BreadcrumbSchema, PersonSchema, ServiceSchema), DisclaimerCallout, PracticeAreaLayout, Header dropdown + Coaching nav link
@@ -113,7 +113,7 @@ Plans:
 |-------|----------------|--------|-----------|
 | 1. Foundation + Live Skeleton | 5/5 | Complete    | 2026-05-07 |
 | 2. Homepage + Conversion Spine | 2/2 | Complete    | 2026-05-07 |
-| 3. Firm Substance — People, Practice Areas, Pricing | 0/5 | Not started | — |
+| 3. Firm Substance — People, Practice Areas, Pricing | 0/5 | In progress (paused at 03-00 checkpoint) | — |
 | 4. Lead Capture + Content + Launch Hardening | 0/0 | Not started | — |
 
 ---
