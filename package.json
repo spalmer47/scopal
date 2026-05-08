@@ -25,6 +25,8 @@
   },
   "devDependencies": {
     "@axe-core/cli": "^4.11.3",
+    "@fontsource/fraunces": "^5.2.9",
+    "@fontsource/inter": "^5.2.8",
     "@lhci/cli": "^0.15.1",
     "linkinator": "^7.6.1",
     "start-server-and-test": "^2.1.5"

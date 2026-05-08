@@ -22,7 +22,8 @@ const { title, description, ogImage, ogType = 'website', noindex = false, emitOr
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!-- TODO: Add Fraunces 600 preload link once woff2 file is committed to public/fonts/ -->
+    <link rel="preload" as="font" type="font/woff2" href="/fonts/Inter-Regular.woff2" crossorigin />
+    <link rel="preload" as="font" type="font/woff2" href="/fonts/Fraunces-SemiBold.woff2" crossorigin />
     <SEO {title} {description} {ogImage} {ogType} {noindex} />
     {emitOrgSchema && <LegalServiceSchema />}
     {emitWebSiteSchema && <WebSiteSchema />}

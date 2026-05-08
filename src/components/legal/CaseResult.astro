@@ -1,0 +1,19 @@
+---
+interface Props {
+  outcome: string;
+  context: string;
+  disclaimer: string;
+}
+const { outcome, context, disclaimer } = Astro.props;
+---
+<div class="bg-surface border border-border rounded-lg p-6">
+  <p class="font-display font-semibold text-xl text-ink leading-[1.25]">{outcome}</p>
+  <p class="mt-2 text-base leading-relaxed text-ink-muted">{context}</p>
+  <div
+    class="mt-4 border-l-4 border-brand-blue-500 px-4 py-3 text-sm text-ink-muted leading-relaxed rounded-r-lg bg-surface-muted"
+    role="note"
+    aria-label="Legal disclaimer"
+  >
+    <strong class="text-ink">Note:</strong> {disclaimer}
+  </div>
+</div>

@@ -57,3 +57,31 @@
     }
   }
 }
+
+/* SELF-HOSTED FONTS — Phase 4 / PERF-02
+ * Files committed to public/fonts/. No Google Fonts CDN.
+ * font-display: swap per D10. Two families × two weights (D10 constraint).
+ */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/Inter-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/fonts/Inter-SemiBold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: "Fraunces";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/fonts/Fraunces-SemiBold.woff2') format('woff2');
+}

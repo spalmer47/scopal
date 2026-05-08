@@ -1,0 +1,21 @@
+---
+interface Props {
+  quote: string;
+  attribution: string;
+  disclaimer: string;
+}
+const { quote, attribution, disclaimer } = Astro.props;
+---
+<figure class="border-l-4 border-brand-blue-500 bg-surface-muted px-6 py-4 rounded-r-lg">
+  <blockquote class="text-base leading-relaxed text-ink italic">
+    <p>{quote}</p>
+  </blockquote>
+  <figcaption class="mt-2 text-sm text-ink-muted">— {attribution}</figcaption>
+  <div
+    class="mt-3 text-sm text-ink-muted leading-relaxed"
+    role="note"
+    aria-label="Legal disclaimer"
+  >
+    <strong class="text-ink">Note:</strong> {disclaimer}
+  </div>
+</figure>
