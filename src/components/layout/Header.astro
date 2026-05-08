@@ -4,13 +4,18 @@ import { FIRM } from '../../lib/constants';
 <header class="sticky top-0 z-50 bg-surface border-b border-border shadow-sm">
   <div class="mx-auto max-w-[1200px] px-md md:px-lg lg:px-xl h-[64px] md:h-[80px] flex items-center justify-between">
 
-    <!-- Logo / Wordmark -->
+    <!-- Logo -->
     <a
       href="/"
       aria-label={`${FIRM.shortName} — Home`}
-      class="font-display font-semibold text-[20px] md:text-[24px] text-ink hover:text-brand-blue-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue-500 transition-colors"
+      class="focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-blue-500"
     >
-      {FIRM.shortName}
+      <img
+        src="/logo.svg"
+        alt={FIRM.shortName}
+        height="36"
+        class="h-9 w-auto"
+      />
     </a>
 
     <!-- Desktop nav + CTA (hidden on mobile) -->
