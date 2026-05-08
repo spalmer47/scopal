@@ -15,7 +15,7 @@ progress:
 
 # Project State — Scopal Firm Website
 
-**Status:** Phase 4 in progress — 04-00 complete
+**Status:** Phase 4 in progress — 04-00, 04-02 complete
 **Current Phase:** 4
 **Last Updated:** 2026-05-08
 
@@ -96,6 +96,7 @@ See: .planning/PROJECT.md
 
 ## Session Continuity
 
+- Phase 4 / 04-02 complete: 2026-05-08 — SEO upgrade (absolute og:image, twitter:card), 4 legal pages, Footer legal links; commit e8932fe
 - Phase 4 / 04-00 complete: 2026-05-08 — fonts, OG image, legal components, first blog post; commit 7895a49
 - Phase 3 complete: 2026-05-07 — 5 plans, 8 pages built, all passing
 - Working directory: `/Users/spalmer/Documents/Claude Code/Scopal Website`
