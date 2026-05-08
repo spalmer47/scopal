@@ -104,6 +104,8 @@ Give a convinced visitor every page they need to qualify the firm: two practice 
 
 > **Note:** PRICE-01 cites "$4,500/month" — this is superseded by D-13 in this CONTEXT.md. The correct anchor for Phase 3 is **$995/month**.
 
+> **Note:** PRAC-01 lists `/practice-areas/legal-executive-coaching` as a third practice area URL — this is superseded by D-01 in this CONTEXT.md. Legal Executive Coaching lives at `/coaching` (not under `/practice-areas/`). See ROADMAP.md Phase 3 success criterion 1.
+
 ### Design System (locked in Phase 1)
 - `.planning/phases/01-foundation-live-skeleton/01-UI-SPEC.md` — typography (Inter body / Fraunces display), spacing scale, color tokens, component patterns, container width. All Phase 3 pages inherit this system.
 - `.planning/phases/01-foundation-live-skeleton/01-PATTERNS.md` — Astro component patterns, layout hierarchy, JSON-LD pattern, NAP single-source rule.

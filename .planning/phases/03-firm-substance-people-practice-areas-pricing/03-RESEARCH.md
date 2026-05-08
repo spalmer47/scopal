@@ -851,22 +851,13 @@ const scott = ATTORNEYS['scott-palmer'];
 
 ---
 
-## Open Questions
+## Open Questions (RESOLVED)
 
-1. **Rachel's headshot format and timing**
-   - What we know: D-26 says headshots are a blocking prerequisite; D-28 suggests `.jpg` or `.webp`
-   - What's unclear: Whether Rachel's headshot exists anywhere (it does not appear in `public/images/team/`)
-   - Recommendation: The execution plan Wave 0 must be `autonomous: false` with an explicit checkpoint: "Commit Rachel's headshot to `public/images/team/` before running Wave 1." Same blocking prerequisite pattern used for Phase 2 logos.
+1. **Rachel's headshot format and timing** — RESOLVED: Wave 0 plan (03-00) is `autonomous: false` with an explicit blocking checkpoint requiring Scott to commit `rachel-palmer.[ext]` to `public/images/team/` before Wave 1 runs.
 
-2. **Coaching page: single static `.astro` vs. single-entry collection**
-   - What we know: D-02 says "built from an MDX content file." This implies a collection.
-   - What's unclear: Whether a single-entry collection is worth the overhead vs. a static `.astro` that imports an MDX file directly (not from a collection)
-   - Recommendation: Use a minimal `coaching` collection. D-02 is explicit about content-editing consistency. The overhead is one collection definition + one directory. This also future-proofs if coaching content grows.
+2. **Coaching page: single static `.astro` vs. single-entry collection** — RESOLVED: Using a minimal `coaching` collection per D-02's content-editing consistency requirement. Plan 03-01 adds the collection to `content.config.ts`; plan 03-03 creates the coaching MDX and `coaching.astro` page.
 
-3. **Service schema on practice area pages**
-   - What we know: PRAC-05 requires `Service` JSON-LD; ROADMAP success criteria 5 confirms this.
-   - What's unclear: What `Service` schema fields are required beyond `@type` and `name`.
-   - Recommendation: Build a `ServiceSchema.astro` component that emits `Service` with `name`, `provider` (the LegalService), and `description`. Validate with Google Rich Results Test post-build. [ASSUMED — schema.org/Service is simple and well-documented; this is LOW risk]
+3. **Service schema on practice area pages** — RESOLVED: `ServiceSchema.astro` (created in plan 03-01) emits `Service` with `name`, `provider` (pointing to the LegalService), and `description`. Validate with Google Rich Results Test post-build per PRAC-05.
 
 ---
 

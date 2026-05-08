@@ -3,19 +3,19 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 current_phase: 3
-status: ready_to_plan
+status: ready_to_execute
 last_updated: "2026-05-07T00:00:00.000Z"
 progress:
   total_phases: 4
   completed_phases: 2
-  total_plans: 7
+  total_plans: 12
   completed_plans: 7
   percent: 50
 ---
 
 # Project State — Scopal Firm Website
 
-**Status:** Ready to plan Phase 3
+**Status:** Ready to execute Phase 3 (5 plans)
 **Current Phase:** 3
 **Last Updated:** 2026-05-07
 
@@ -31,7 +31,7 @@ See: .planning/PROJECT.md
 |---|-------|--------|--------------|
 | 1 | Foundation + Live Skeleton | Complete | FOUND-01..07 (7) |
 | 2 | Homepage + Conversion Spine | Complete (2/2 plans done) | HOME-01..07 (7) |
-| 3 | Firm Substance — People, Practice Areas, Pricing | Not started | PRAC-01..05, TEAM-01..04, PRICE-01..03 (12) |
+| 3 | Firm Substance — People, Practice Areas, Pricing | Ready to execute (5 plans) | PRAC-01..05, TEAM-01..04, PRICE-01..03 (12) |
 | 4 | Lead Capture + Content + Launch Hardening | Not started | FORM-01..06, BLOG-01..05, SEO-01..05, LEGAL-01..04, SEC-01..05, PERF-01..03 (28) |
 
 **Coverage:** 47 / 47 v1 requirements mapped ✓
@@ -86,9 +86,18 @@ See: .planning/PROJECT.md
 - **02-01-PLAN.md** (Wave 1) — Header nav update + `/contact` placeholder. `autonomous: false` — logo checkpoint blocks execution until Scott commits logo files.
 - **02-02-PLAN.md** (Wave 2, depends on 02-01) — Full StoryBrand homepage: 7 section components + WebSiteSchema + BaseLayout patch + `index.astro` replacement. `autonomous: true`.
 
+## Phase 3 Planning Summary (2026-05-07)
+
+- **03-00-PLAN.md** (Wave 0, autonomous: false) — Headshot prerequisites: optimize Scott's headshot (296 KB → ≤200 KB, src/assets/team/); blocking human checkpoint for Rachel's headshot commit.
+- **03-01-PLAN.md** (Wave 1a, autonomous: true) — Infrastructure: coaching collection (content.config.ts), 4 schema components (FAQSchema, BreadcrumbSchema, PersonSchema, ServiceSchema), DisclaimerCallout, PracticeAreaLayout, Header dropdown + Coaching nav link.
+- **03-02-PLAN.md** (Wave 1b, depends on 03-01, autonomous: true) — Practice area content: [slug].astro dynamic routing template + corporate-law.mdx + fractional-general-counsel.mdx (800–1,500+ words each, 3–5 FAQs each). Uses entry.id per Astro 6 breaking change.
+- **03-03-PLAN.md** (Wave 2, autonomous: true) — Static pages: coaching.astro (renders coaching MDX via collection, audience: in-house attorneys/GCs) + pricing.astro (Unlimited GC Access, $995/month, 5 service area cards, StoryBrand narrative, comparison context).
+- **03-04-PLAN.md** (Wave 2, autonomous: true) — Bio pages: scott-palmer.astro (PersonSchema, formatBarStatus(), astro:assets headshot, client-benefit H1) + rachel-palmer.astro (Head of Operations, /team/ URL, UPL-compliant non-attorney copy).
+
 ## Session Continuity
 
-- Next action: `/gsd-plan-phase 3` — plan Phase 3 (Firm Substance: People, Practice Areas, Pricing)
+- Next action: `/gsd-execute-phase 3` — execute Phase 3 (Firm Substance: People, Practice Areas, Pricing)
+- Phase 3 planning complete: 2026-05-07 — 5 plans, 3 waves, verified by plan checker
 - Phase 3 context gathered: 2026-05-07 — see `03-CONTEXT.md`
 - Working directory: `/Users/spalmer/Documents/Claude Code/Scopal Website`
 - Repo: https://github.com/spalmer47/scopal

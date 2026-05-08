@@ -70,12 +70,25 @@ Plans:
 **Depends on:** Phase 2
 **Requirements:** PRAC-01, PRAC-02, PRAC-03, PRAC-04, PRAC-05, TEAM-01, TEAM-02, TEAM-03, TEAM-04, PRICE-01, PRICE-02, PRICE-03
 **Success Criteria** (what must be TRUE):
-  1. A visitor can reach three live, client-focused practice area pages at `/practice-areas/fractional-general-counsel`, `/practice-areas/corporate-law`, and `/practice-areas/legal-executive-coaching`, each 800–1,500+ words with H1 describing the client's situation, who-it's-for, scenarios, engagement, scope/pricing, FAQ (3–5), and CTA.
+  1. A visitor can reach `/practice-areas/fractional-general-counsel`, `/practice-areas/corporate-law`, and `/coaching`, each 800–1,500+ words with H1 describing the client's situation, who-it's-for, scenarios, engagement, scope/pricing, FAQ (3–5 on practice area pages), and CTA. (Note: /coaching is a separate top-level page per D-01, not under /practice-areas/.)
   2. Every practice area page automatically renders the attorney-client disclaimer callout, FAQ block (emitting `FAQPage` schema), breadcrumbs, and CTASection without the page author wiring them.
   3. `/attorneys/scott-palmer` displays Scott's bio leading with client benefit, prior in-house roles, education, representative matters, headshot, and bar status copy reading exactly "Maryland (2009); New Jersey admission pending" — no copy implies NJ is active.
   4. `/team/rachel-palmer` exists under `/team/` (NOT `/attorneys/`), clearly identifies Rachel's non-attorney role, and shows her headshot.
-  5. `/pricing` publicly anchors "starting at $4,500/month" plus flat-fee project option, contextualizes value vs BigLaw hourly and full-time GC hire cost, and CTAs read "Book a Fit Call" / "Schedule a Consultation" — never "Buy Now" or "Sign Up". Practice area + bio JSON-LD (`Service`, `FAQPage`, `BreadcrumbList`, `Person` with `worksFor`/`alumniOf`/`hasCredential`) passes Google Rich Results Test.
-**Plans:** TBD
+  5. `/pricing` anchors "Unlimited GC Access" at $995/month, contextualizes value vs BigLaw hourly and full-time GC hire cost, and CTAs read "Book a Fit Call" / "Schedule a Consultation" — never "Buy Now" or "Sign Up". Practice area + bio JSON-LD (`Service`, `FAQPage`, `BreadcrumbList`, `Person` with `worksFor`/`alumniOf`/`hasCredential`) passes Google Rich Results Test.
+**Plans:** 5 plans
+Plans:
+**Wave 0** *(blocking checkpoint — Rachel's headshot must be committed before Wave 1)*
+- [ ] 03-00-PLAN.md — Headshot prerequisite: optimize Scott's headshot (296 KB → ≤200 KB, src/assets/team/); blocking checkpoint for Rachel's headshot commit
+
+**Wave 1a**
+- [ ] 03-01-PLAN.md — Infrastructure: coaching collection (content.config.ts), 4 schema components (FAQSchema, BreadcrumbSchema, PersonSchema, ServiceSchema), DisclaimerCallout, PracticeAreaLayout, Header dropdown + Coaching nav link
+
+**Wave 1b** *(blocked on Wave 1a — 03-02 depends on PracticeAreaLayout from 03-01)*
+- [ ] 03-02-PLAN.md — Practice area content: [slug].astro dynamic routing template + corporate-law.mdx + fractional-general-counsel.mdx (800–1,500+ words each, 3–5 FAQs each)
+
+**Wave 2** *(parallel — no file conflicts between 03-03 and 03-04)*
+- [ ] 03-03-PLAN.md — Static pages: coaching.astro (renders coaching MDX via collection) + pricing.astro (Unlimited GC Access, $995/month, 5 service area cards, comparison context)
+- [ ] 03-04-PLAN.md — Bio pages: scott-palmer.astro (PersonSchema, formatBarStatus(), astro:assets headshot, client-benefit H1) + rachel-palmer.astro (Head of Operations, /team/ URL, no attorney schema)
 **UI hint:** yes
 
 ### Phase 4: Lead Capture + Content + Launch Hardening
@@ -100,7 +113,7 @@ Plans:
 |-------|----------------|--------|-----------|
 | 1. Foundation + Live Skeleton | 5/5 | Complete    | 2026-05-07 |
 | 2. Homepage + Conversion Spine | 2/2 | Complete    | 2026-05-07 |
-| 3. Firm Substance — People, Practice Areas, Pricing | 0/0 | Not started | — |
+| 3. Firm Substance — People, Practice Areas, Pricing | 0/5 | Not started | — |
 | 4. Lead Capture + Content + Launch Hardening | 0/0 | Not started | — |
 
 ---
@@ -128,3 +141,4 @@ Plans:
 
 ---
 *Roadmap created: 2026-05-07 from PROJECT.md + REQUIREMENTS.md + research/SUMMARY.md*
+*Phase 3 plans added: 2026-05-07*
