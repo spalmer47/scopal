@@ -112,7 +112,7 @@ Plans:
 - [ ] 04-02-PLAN.md — SEO + Legal: SEO.astro OG image fallback upgrade + four /legal/* pages + Footer privacy/terms/disclaimer links
 
 **Wave 2** *(blocked on Wave 1 — autonomous: false — Q3 provider checkpoint)*
-- [ ] 04-03-PLAN.md — Contact form: src/actions/index.ts (all 7 FORM-03 controls) + contact.astro replacement + contact/thank-you.astro; provider choice checkpoint presented to Scott
+- [x] 04-03-PLAN.md — Contact form: src/actions/index.ts (all 7 FORM-03 controls) + contact.astro replacement + contact/thank-you.astro; Option A (Resend) chosen, delivery to scott@scopalfirm.com (commit 7845bd3)
 
 **Wave 3** *(blocked on Wave 2 — final launch gate)*
 - [ ] 04-04-PLAN.md — Pre-launch audit: SEC-01..05 verification + PERF-01..03 Lighthouse check + image/font audit + full page count verification + human-verify checkpoint
@@ -127,7 +127,7 @@ Plans:
 | 1. Foundation + Live Skeleton | 5/5 | Complete    | 2026-05-07 |
 | 2. Homepage + Conversion Spine | 2/2 | Complete    | 2026-05-07 |
 | 3. Firm Substance — People, Practice Areas, Pricing | 5/5 | Complete | 2026-05-07 |
-| 4. Lead Capture + Content + Launch Hardening | 1/5 | In progress | — |
+| 4. Lead Capture + Content + Launch Hardening | 2/5 | In progress | — |
 
 ---
 
