@@ -1,8 +1,13 @@
 {
   "ci": {
     "collect": {
-      "staticDistDir": "./dist",
-      "url": ["http://localhost/index.html"],
+      "staticDistDir": "./dist/client",
+      "url": [
+        "http://localhost/",
+        "http://localhost/practice-areas/corporate-law/",
+        "http://localhost/blog/when-saas-needs-a-lawyer/",
+        "http://localhost/legal/disclaimer/"
+      ],
       "numberOfRuns": 3
     },
     "assert": {
