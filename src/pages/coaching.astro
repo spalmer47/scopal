@@ -1,0 +1,26 @@
+---
+import MarketingLayout from '../layouts/MarketingLayout.astro';
+import CTASection from '../components/sections/CTASection.astro';
+import { getCollection, render } from 'astro:content';
+
+const entries = await getCollection('coaching');
+const entry = entries[0];
+const { Content } = await render(entry);
+---
+<MarketingLayout
+  title="Legal Executive Coaching | Scopal Firm"
+  description={entry.data.description}
+>
+  <article class="mx-auto max-w-[1200px] px-md md:px-lg lg:px-xl py-12 md:py-16">
+    <div class="max-w-prose mx-auto">
+      <p class="text-sm font-semibold text-brand-blue-500 uppercase tracking-wide mb-4">For In-House Attorneys &amp; General Counsel</p>
+      <h1 class="font-display font-semibold text-4xl md:text-5xl text-ink leading-[1.15]">
+        {entry.data.title}
+      </h1>
+      <div class="prose prose-lg mt-8">
+        <Content />
+      </div>
+    </div>
+  </article>
+  <CTASection />
+</MarketingLayout>

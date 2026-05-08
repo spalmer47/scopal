@@ -1,0 +1,54 @@
+---
+import MarketingLayout from '../../layouts/MarketingLayout.astro';
+import { Image } from 'astro:assets';
+import rachelHeadshot from '../../assets/team/rachel-palmer.jpg';
+---
+<MarketingLayout
+  title="Rachel Palmer — Head of Operations | Scopal Firm"
+  description="Rachel Palmer is Head of Operations at Scopal Firm, managing administrative and organizational functions that keep the practice running efficiently."
+>
+  <article class="mx-auto max-w-[1200px] px-md md:px-lg lg:px-xl py-12 md:py-16">
+    <div class="grid grid-cols-1 md:grid-cols-[1fr_300px] gap-12 md:gap-16 items-start">
+
+      <div>
+        <p class="text-sm font-semibold text-brand-blue-500 uppercase tracking-wide mb-4">Team</p>
+        <h1 class="font-display font-semibold text-4xl md:text-5xl text-ink leading-[1.15]">
+          Rachel Palmer
+        </h1>
+        <p class="mt-2 text-xl text-ink-muted font-semibold">Head of Operations</p>
+        <p class="mt-2 text-sm text-ink-muted italic">Not an attorney — operations and administrative role</p>
+
+        <p class="mt-8 text-base leading-relaxed text-ink-muted">
+          Rachel Palmer is the Head of Operations at Scopal Firm, responsible for the administrative and organizational functions that support the practice. She manages firm operations so that Scott can focus on serving clients.
+        </p>
+
+        <p class="mt-4 text-base leading-relaxed text-ink-muted">
+          If you have an administrative question about an existing engagement or need to reach the firm for non-legal matters, Rachel is the right contact.
+        </p>
+
+        <div class="mt-8">
+          <a
+            href="/contact"
+            class="inline-block bg-brand-blue-500 hover:bg-brand-blue-600 text-white text-base font-semibold py-3 px-6 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-brand-blue-500 focus:ring-offset-2"
+          >
+            Get in Touch
+          </a>
+        </div>
+      </div>
+
+      <!-- Headshot column -->
+      <div class="md:sticky md:top-[100px]">
+        <Image
+          src={rachelHeadshot}
+          alt="Rachel Palmer, Head of Operations at Scopal Firm"
+          width={300}
+          height={360}
+          class="rounded-xl object-cover w-full"
+          loading="lazy"
+        />
+        <p class="mt-4 text-sm font-semibold text-ink">Rachel Palmer</p>
+        <p class="text-sm text-ink-muted">Head of Operations</p>
+      </div>
+    </div>
+  </article>
+</MarketingLayout>

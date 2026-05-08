@@ -1,0 +1,113 @@
+---
+import MarketingLayout from '../../layouts/MarketingLayout.astro';
+import PersonSchema from '../../components/seo/PersonSchema.astro';
+import CTASection from '../../components/sections/CTASection.astro';
+import { Image } from 'astro:assets';
+import { ATTORNEYS, formatBarStatus } from '../../lib/constants';
+import scottHeadshot from '../../assets/team/scott-palmer.jpg';
+
+const scott = ATTORNEYS['scott-palmer'];
+---
+<MarketingLayout
+  title="Scott A. Palmer — Principal Attorney | Scopal Firm"
+  description="Scott A. Palmer is the principal attorney at Scopal Firm. Formerly VP and General Counsel at uPerform, a PE-backed healthcare SaaS company. Serving SaaS and tech companies as fractional GC."
+  ogType="profile"
+>
+  <PersonSchema />
+  <article class="mx-auto max-w-[1200px] px-md md:px-lg lg:px-xl py-12 md:py-16">
+
+    <!-- Two-column layout: bio content + headshot -->
+    <div class="grid grid-cols-1 md:grid-cols-[1fr_300px] gap-12 md:gap-16 items-start">
+
+      <div>
+        <h1 class="font-display font-semibold text-4xl md:text-5xl text-ink leading-[1.15]">
+          A General Counsel Invested in Your Business, Not Your Hourly Bill
+        </h1>
+
+        <p class="mt-6 text-base md:text-lg leading-relaxed text-ink-muted">
+          Most SaaS companies manage legal by calling outside counsel when something goes wrong. The problem with that model is not just the cost — it is that your lawyer does not know your business. Every matter starts from scratch.
+        </p>
+
+        <p class="mt-4 text-base leading-relaxed text-ink-muted">
+          Scott Palmer works differently. As your fractional General Counsel, he attends the meetings, reviews the contracts, and builds the understanding of your company that makes legal judgment useful — not just technically correct, but aligned with how your business actually operates and what it is trying to accomplish.
+        </p>
+
+        <h2 class="font-display font-semibold text-2xl md:text-[28px] text-ink leading-[1.25] mt-12">
+          In-House Background
+        </h2>
+        <p class="mt-4 text-base leading-relaxed text-ink-muted">
+          Before founding Scopal Firm, Scott spent more than seven years as VP, General Counsel, and Corporate Secretary of uPerform, a PE-backed healthcare SaaS company. He managed the company's legal function through the full lifecycle of a portfolio company — from day-to-day commercial contracting and employment matters to board governance, investor relations, and eventual exit planning.
+        </p>
+        <p class="mt-4 text-base leading-relaxed text-ink-muted">
+          Earlier in his career, Scott served as Staff and Associate Counsel at Ancile Solutions, Inc., where he managed IP and trademark matters, negotiated Fortune 100 software licenses, MSAs, SOWs, and SaaS agreements, and developed the company's Global Policy Handbook.
+        </p>
+        <p class="mt-4 text-base leading-relaxed text-ink-muted">
+          That in-house background is the core of what Scopal Firm delivers. Scott brings GC-level judgment — the perspective of someone who has been the lawyer in the room, in the meetings, and on the board calls — to companies that need that judgment without the cost of a full-time hire.
+        </p>
+
+        <h2 class="font-display font-semibold text-2xl md:text-[28px] text-ink leading-[1.25] mt-12">
+          Focus Areas
+        </h2>
+        <p class="mt-4 text-base leading-relaxed text-ink-muted">
+          Scott focuses on the legal needs of SaaS and technology companies: commercial contracting, data privacy and security, AI governance, corporate structure and governance, risk management, and fractional General Counsel services. He also advises AI software clients on LLM integration, contract review, and the implementation of AI policies and procedures.
+        </p>
+        <p class="mt-4 text-base leading-relaxed text-ink-muted">
+          Scopal Firm is an AI-native practice — Scott uses current technology to deliver faster, more consistent legal work than a traditional practice.
+        </p>
+
+        <h2 class="font-display font-semibold text-2xl md:text-[28px] text-ink leading-[1.25] mt-12">
+          Education
+        </h2>
+        <ul class="mt-4 space-y-2 text-base text-ink-muted">
+          <li>J.D., University of Baltimore School of Law</li>
+          <li>B.S. in Financial Analysis, University of Maryland, College Park</li>
+        </ul>
+
+        <h2 class="font-display font-semibold text-2xl md:text-[28px] text-ink leading-[1.25] mt-12">
+          Bar Admissions
+        </h2>
+        <p class="mt-4 text-base text-ink-muted">
+          {formatBarStatus()}
+        </p>
+
+        <h2 class="font-display font-semibold text-2xl md:text-[28px] text-ink leading-[1.25] mt-12">
+          Professional Affiliations
+        </h2>
+        <ul class="mt-4 space-y-2 text-base text-ink-muted">
+          <li>Member, HeyCounsel</li>
+          <li>Founding Member, InHoused</li>
+        </ul>
+
+        <div class="mt-12 flex flex-wrap gap-4">
+          <a
+            href="/contact"
+            class="inline-block bg-brand-blue-500 hover:bg-brand-blue-600 text-white text-base font-semibold py-3 px-6 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-brand-blue-500 focus:ring-offset-2"
+          >
+            Book a Fit Call
+          </a>
+          <a
+            href="/pricing"
+            class="inline-block text-brand-blue-500 hover:text-brand-blue-600 text-base font-semibold py-3 px-2 transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue-500"
+          >
+            See how the subscription works →
+          </a>
+        </div>
+      </div>
+
+      <!-- Headshot column -->
+      <div class="md:sticky md:top-[100px]">
+        <Image
+          src={scottHeadshot}
+          alt="Scott A. Palmer, Principal Attorney at Scopal Firm"
+          width={300}
+          height={360}
+          class="rounded-xl object-cover w-full"
+          loading="eager"
+        />
+        <p class="mt-4 text-sm font-semibold text-ink">{scott.name}</p>
+        <p class="text-sm text-ink-muted">{scott.role}</p>
+      </div>
+    </div>
+  </article>
+  <CTASection />
+</MarketingLayout>

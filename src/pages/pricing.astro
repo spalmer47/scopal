@@ -1,0 +1,140 @@
+---
+import MarketingLayout from '../layouts/MarketingLayout.astro';
+import CTASection from '../components/sections/CTASection.astro';
+import { FIRM } from '../lib/constants';
+
+const serviceAreas = [
+  {
+    name: 'Corporate',
+    description: 'Formation documents, partnership agreements, and related consulting.',
+  },
+  {
+    name: 'Contracts',
+    description: 'Initial audit, drafting and negotiation.',
+  },
+  {
+    name: 'HR Matters',
+    description: 'Daily HR questions, employment contracts.',
+  },
+  {
+    name: 'Pre-litigation',
+    description: 'Negotiation and dispute management.',
+  },
+  {
+    name: 'Data',
+    description: 'Audit, documentation, assessments, and agreements.',
+  },
+] as const;
+---
+<MarketingLayout
+  title="Unlimited GC Access — $995/Month | Scopal Firm"
+  description="One flat monthly rate. Unlimited day-to-day legal access for your SaaS company. No hourly billing, no surprise invoices. Corporate, contracts, HR, pre-litigation, and data privacy included."
+>
+  <!-- Hero section -->
+  <section class="bg-surface py-16 md:py-24">
+    <div class="mx-auto max-w-[1200px] px-md md:px-lg lg:px-xl">
+      <div class="max-w-2xl">
+        <p class="text-sm font-semibold text-brand-blue-500 uppercase tracking-wide mb-4">Pricing</p>
+        <h1 class="font-display font-semibold text-4xl md:text-5xl text-ink leading-[1.15]">
+          Unlimited GC Access
+        </h1>
+        <p class="mt-6 text-base md:text-lg leading-relaxed text-ink-muted">
+          Your SaaS company has real legal needs — contracts to review, decisions to navigate, questions that come up at the worst possible moment. The traditional answer is an outside law firm that bills by the hour. The problem with that answer is not just the cost. It is that you only call when something is already wrong.
+        </p>
+        <p class="mt-4 text-base md:text-lg leading-relaxed text-ink-muted">
+          Prevention costs less than crisis. A dedicated legal partner who knows your business, answers your questions the same day, and catches problems before they surface on a timeline you do not control is not a luxury. It is a different way of managing risk — and it is almost always cheaper than the alternative.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing card -->
+  <section class="bg-surface-muted py-16 md:py-20">
+    <div class="mx-auto max-w-[1200px] px-md md:px-lg lg:px-xl">
+      <div class="max-w-lg">
+        <div class="bg-surface border border-border rounded-xl p-8 md:p-10 shadow-sm">
+          <h2 class="font-display font-semibold text-2xl md:text-[28px] text-ink leading-[1.25]">
+            Unlimited GC Access
+          </h2>
+          <div class="mt-4 flex items-baseline gap-2">
+            <span class="font-display font-semibold text-4xl md:text-5xl text-ink">$995</span>
+            <span class="text-base text-ink-muted">/month</span>
+          </div>
+          <p class="mt-4 text-base leading-relaxed text-ink-muted">
+            One flat rate. No hourly billing. No minimum hours. No surprise invoices.
+          </p>
+          <div class="mt-8 flex flex-wrap gap-4">
+            <a
+              href="/contact"
+              class="inline-block bg-brand-blue-500 hover:bg-brand-blue-600 text-white text-base font-semibold py-3 px-6 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-brand-blue-500 focus:ring-offset-2"
+            >
+              Book a Fit Call
+            </a>
+            <a
+              href="/contact"
+              class="inline-block text-base text-brand-blue-500 hover:text-brand-blue-600 font-semibold py-3 transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue-500"
+            >
+              Schedule a Consultation
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What's included: 5 service area cards -->
+  <section class="bg-surface py-16 md:py-20">
+    <div class="mx-auto max-w-[1200px] px-md md:px-lg lg:px-xl">
+      <h2 class="font-display font-semibold text-2xl md:text-[28px] text-ink leading-[1.25] max-w-xl">
+        What's Included
+      </h2>
+      <p class="mt-4 text-base leading-relaxed text-ink-muted max-w-prose">
+        Your subscription covers five categories of day-to-day legal work. Unlimited questions, reviews, and advice across all five areas — no separate billing for covered matters.
+      </p>
+      <div class="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        {serviceAreas.map((area) => (
+          <div class="bg-surface border border-border rounded-lg p-6 flex flex-col gap-3">
+            <h3 class="font-display font-semibold text-xl text-ink leading-[1.25]">{area.name}</h3>
+            <p class="text-base leading-relaxed text-ink-muted">{area.description}</p>
+          </div>
+        ))}
+      </div>
+      <p class="mt-8 text-sm leading-relaxed text-ink-muted max-w-prose">
+        Work outside the included scope — such as major transactions, financing rounds, litigation, or matters requiring counsel in jurisdictions beyond Scott's bar admissions — is scoped and estimated before work begins, so you always know what to expect.
+      </p>
+    </div>
+  </section>
+
+  <!-- Value comparison section -->
+  <section class="bg-surface-muted py-16 md:py-20">
+    <div class="mx-auto max-w-[1200px] px-md md:px-lg lg:px-xl">
+      <div class="max-w-prose">
+        <h2 class="font-display font-semibold text-2xl md:text-[28px] text-ink leading-[1.25]">
+          What the Alternatives Actually Cost
+        </h2>
+        <p class="mt-6 text-base leading-relaxed text-ink-muted">
+          Outside counsel at a mid-size firm typically bills $400–$800 per hour. A 10-hour month of contract reviews, HR questions, and vendor negotiations runs $4,000–$8,000 — without any continuity between matters.
+        </p>
+        <p class="mt-4 text-base leading-relaxed text-ink-muted">
+          Hiring a full-time General Counsel means base compensation of $200,000–$350,000 per year before benefits, equity, and recruiting fees. For a company that does not yet have the volume to justify a full-time hire, that cost does not reflect the value delivered.
+        </p>
+        <p class="mt-4 text-base leading-relaxed text-ink-muted">
+          At $995/month, the {FIRM.shortName} subscription is designed for companies that need dedicated, senior-level legal judgment on a consistent basis — without the overhead of a full-time hire or the unpredictability of hourly billing.
+        </p>
+        <p class="mt-4 text-base leading-relaxed text-ink-muted">
+          The value of the engagement grows over time. The longer Scott knows your business — your customers, your vendors, your risk tolerance, your growth plans — the better the advice. That continuity is what the subscription model is designed to create.
+        </p>
+        <div class="mt-8">
+          <a
+            href="/contact"
+            class="inline-block bg-brand-blue-500 hover:bg-brand-blue-600 text-white text-base font-semibold py-3 px-6 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-brand-blue-500 focus:ring-offset-2"
+          >
+            Book a Fit Call
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CTASection />
+</MarketingLayout>
