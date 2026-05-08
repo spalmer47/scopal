@@ -9,13 +9,13 @@ progress:
   total_phases: 4
   completed_phases: 3
   total_plans: 17
-  completed_plans: 12
-  percent: 75
+  completed_plans: 13
+  percent: 76
 ---
 
 # Project State — Scopal Firm Website
 
-**Status:** Phase 4 planned — ready to execute
+**Status:** Phase 4 in progress — 04-00 complete
 **Current Phase:** 4
 **Last Updated:** 2026-05-08
 
@@ -96,6 +96,7 @@ See: .planning/PROJECT.md
 
 ## Session Continuity
 
+- Phase 4 / 04-00 complete: 2026-05-08 — fonts, OG image, legal components, first blog post; commit 7895a49
 - Phase 3 complete: 2026-05-07 — 5 plans, 8 pages built, all passing
 - Working directory: `/Users/spalmer/Documents/Claude Code/Scopal Website`
 - Repo: https://github.com/spalmer47/scopal

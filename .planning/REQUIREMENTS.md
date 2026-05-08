@@ -63,13 +63,13 @@
 - [ ] **BLOG-02**: Every blog post is attributed to Scott A. Palmer; `BlogPostLayout` auto-injects prose wrapper, legal disclaimer, `Article` JSON-LD, breadcrumbs, and CTA
 - [ ] **BLOG-03**: Blog posts can be drafted (filtered from production via `draft: true` frontmatter)
 - [ ] **BLOG-04**: RSS feed at `/rss.xml`
-- [ ] **BLOG-05**: At least 1 published blog post ships with the initial site to demonstrate the blog is active
+- [x] **BLOG-05**: At least 1 published blog post ships with the initial site to demonstrate the blog is active
 
 ### SEO & Metadata
 
 - [ ] **SEO-01**: `<SEO />` component in `BaseLayout.astro` handles title (≤60 chars, format: `${pageTitle} — Annandale, NJ | Scopal Firm`), description (≤155 chars), canonical, Open Graph, and JSON-LD for every page
 - [ ] **SEO-02**: `@astrojs/sitemap` generates `sitemap.xml` automatically; `public/robots.txt` allows all crawlers and references sitemap; `/api/*` disallowed
-- [ ] **SEO-03**: Default Open Graph image (`/og-default.jpg`, 1200×630) in `public/`; per-page OG image override available via frontmatter
+- [x] **SEO-03**: Default Open Graph image (`/og-default.jpg`, 1200×630) in `public/`; per-page OG image override available via frontmatter
 - [ ] **SEO-04**: JSON-LD components (`LegalServiceSchema`, `PersonSchema`, `ArticleSchema`, `FAQSchema`, `BreadcrumbSchema`) wrap raw objects — no free-form JSON-LD strings in page files
 - [ ] **SEO-05**: Every page type validated with Google Rich Results Test before merge
 
@@ -78,7 +78,7 @@
 - [ ] **LEGAL-01**: Footer on every page (via `BaseLayout`): NAP, attorney advertising statement ("Attorney Advertising. Prior results do not guarantee a similar outcome."), responsible attorney (Scott A. Palmer), jurisdictions (MD active; NJ pending), no-attorney-client disclaimer, privacy/terms links
 - [ ] **LEGAL-02**: Jurisdictional UPL disclaimer in footer: "Scopal Firm, LLC attorneys are licensed to practice law in Maryland; New Jersey admission pending. This website is not intended to solicit clients in jurisdictions where the firm's attorneys are not licensed."
 - [ ] **LEGAL-03**: `/legal/disclaimer`, `/legal/privacy`, `/legal/terms`, and `/legal/accessibility-statement` pages published at launch
-- [ ] **LEGAL-04**: `<Testimonial>` and `<CaseResult>` components require a `disclaimer` prop — cannot be rendered without one (build-time enforcement)
+- [x] **LEGAL-04**: `<Testimonial>` and `<CaseResult>` components require a `disclaimer` prop — cannot be rendered without one (build-time enforcement)
 
 ### Security Hardening
 
@@ -91,7 +91,7 @@
 ### Performance
 
 - [ ] **PERF-01**: All images routed through `astro:assets` `<Image />`; committed source images ≤200 KB; WebP/AVIF output for hero via `<Picture />`
-- [ ] **PERF-02**: Fonts self-hosted in `public/fonts/` (no Google Fonts); max 2 families × 2 weights; above-fold weight preloaded; `font-display: swap`
+- [x] **PERF-02**: Fonts self-hosted in `public/fonts/` (no Google Fonts); max 2 families × 2 weights; above-fold weight preloaded; `font-display: swap`
 - [ ] **PERF-03**: Site passes Lighthouse mobile ≥ 90 across all page types at launch; LCP < 2.0s; CLS < 0.05; INP < 100ms
 
 ---
@@ -164,23 +164,23 @@
 | BLOG-02 | Phase 4 | Pending |
 | BLOG-03 | Phase 4 | Pending |
 | BLOG-04 | Phase 4 | Pending |
-| BLOG-05 | Phase 4 | Pending |
+| BLOG-05 | Phase 4 | Complete |
 | SEO-01 | Phase 4 | Pending |
 | SEO-02 | Phase 4 | Pending |
-| SEO-03 | Phase 4 | Pending |
+| SEO-03 | Phase 4 | Complete |
 | SEO-04 | Phase 4 | Pending |
 | SEO-05 | Phase 4 | Pending |
 | LEGAL-01 | Phase 4 | Pending |
 | LEGAL-02 | Phase 4 | Pending |
 | LEGAL-03 | Phase 4 | Pending |
-| LEGAL-04 | Phase 4 | Pending |
+| LEGAL-04 | Phase 4 | Complete |
 | SEC-01 | Phase 4 | Pending |
 | SEC-02 | Phase 4 | Pending |
 | SEC-03 | Phase 4 | Pending |
 | SEC-04 | Phase 4 | Pending |
 | SEC-05 | Phase 4 | Pending |
 | PERF-01 | Phase 4 | Pending |
-| PERF-02 | Phase 4 | Pending |
+| PERF-02 | Phase 4 | Complete |
 | PERF-03 | Phase 4 | Pending |
 
 **Coverage:**

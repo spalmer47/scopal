@@ -105,7 +105,7 @@ Plans:
 **Plans:** 5 plans
 Plans:
 **Wave 0** *(no dependencies — prerequisite assets)*
-- [ ] 04-00-PLAN.md — Font files (Inter 400/600 + Fraunces 600 woff2) + OG default image + @font-face rules + BaseLayout preload links + Testimonial/CaseResult stub components + first blog post MDX
+- [x] 04-00-PLAN.md — Font files (Inter 400/600 + Fraunces 600 woff2) + OG default image + @font-face rules + BaseLayout preload links + Testimonial/CaseResult stub components + first blog post MDX (commit 7895a49)
 
 **Wave 1** *(parallel — no file conflicts; both depend on 04-00)*
 - [ ] 04-01-PLAN.md — Blog infrastructure: BlogPostLayout + ArticleSchema + [blog/...page].astro paginated index + [blog/slug].astro post route + rss.xml.js RSS feed + Header Blog nav link
@@ -127,7 +127,7 @@ Plans:
 | 1. Foundation + Live Skeleton | 5/5 | Complete    | 2026-05-07 |
 | 2. Homepage + Conversion Spine | 2/2 | Complete    | 2026-05-07 |
 | 3. Firm Substance — People, Practice Areas, Pricing | 5/5 | Complete | 2026-05-07 |
-| 4. Lead Capture + Content + Launch Hardening | 0/5 | Planned — ready to execute | — |
+| 4. Lead Capture + Content + Launch Hardening | 1/5 | In progress | — |
 
 ---
 
