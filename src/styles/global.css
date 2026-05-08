@@ -19,6 +19,7 @@
   --color-brand-blue-500:    oklch(0.50 0.16 240);   /* primary CTA bg, focus ring */
   --color-brand-blue-600:    oklch(0.42 0.17 240);   /* CTA hover/active */
   --color-brand-orange-500:  oklch(0.70 0.18 50);    /* decorative accent ONLY — never body or links on white */
+  --color-coaching-terra:    oklch(0.50 0.14 52);    /* coaching page hero background — terra-cotta amber */
 
   --color-destructive-600:   oklch(0.52 0.22 27);    /* reserved for Phase 4 form errors */
 
