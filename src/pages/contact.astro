@@ -1,26 +1,117 @@
 ---
+export const prerender = false;
+import { actions } from 'astro:actions';
 import MarketingLayout from '../layouts/MarketingLayout.astro';
 import { FIRM } from '../lib/constants';
+
+const result = Astro.getActionResult(actions.sendContact);
+if (result && !result.error) {
+  return Astro.redirect('/contact/thank-you');
+}
+
+const errorMessage = result?.error ? 'There was a problem sending your message. Please try again or email us directly.' : null;
 ---
 <MarketingLayout
   title="Contact — Annandale, NJ | Scopal Firm"
   description="Reach out to Scott Palmer at Scopal Firm to start a conversation about fractional general counsel for your SaaS company."
 >
-  <div class="mx-auto max-w-prose px-md py-12 md:py-16">
-    <h1 class="font-display font-semibold text-4xl md:text-5xl text-ink leading-[1.15] mb-8">
-      Get in Touch
-    </h1>
-    <p class="text-base leading-relaxed text-ink mb-6">
-      The full contact form is on its way. In the meantime, reach out directly — Scott reads every message and responds within 2 business days.
-    </p>
-    <p class="text-base leading-relaxed text-ink">
-      Email Scott at{' '}
-      <a
-        href={`mailto:${FIRM.email}`}
-        class="text-ink underline underline-offset-2 hover:text-brand-blue-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue-500 transition-colors"
-      >
-        {FIRM.email}
-      </a>.
-    </p>
-  </div>
+  <section class="bg-surface py-16 md:py-24">
+    <div class="mx-auto max-w-[1200px] px-md md:px-lg lg:px-xl">
+      <div class="max-w-2xl">
+        <h1 class="font-display font-semibold text-4xl md:text-5xl text-ink leading-[1.15] mb-4">
+          Get in Touch
+        </h1>
+        <p class="text-base md:text-lg text-ink-muted leading-relaxed mb-10">
+          Tell us a bit about your situation. Scott responds within 2 business days.
+        </p>
+
+        {errorMessage && (
+          <div class="mb-6 border-l-4 border-red-500 bg-red-50 px-6 py-4 text-sm text-red-700 rounded-r-lg" role="alert">
+            {errorMessage}
+          </div>
+        )}
+
+        <form method="POST" action={actions.sendContact} novalidate class="space-y-6">
+          <!-- Control 2: Honeypot field — CSS-positioned off-screen, NOT display:none
+               (bots fill display:none fields; absolute positioning keeps it invisible to humans
+               while remaining accessible to form-filling bots) -->
+          <div style="position: absolute; left: -9999px;" aria-hidden="true">
+            <label for="honeypot-field">Leave this field empty</label>
+            <input type="text" id="honeypot-field" name="honeypot" tabindex="-1" autocomplete="off" />
+          </div>
+
+          <div>
+            <label for="name" class="block text-sm font-semibold text-ink mb-2">Your name <span aria-hidden="true">*</span></label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              maxlength="100"
+              autocomplete="name"
+              class="w-full rounded-lg border border-border bg-surface px-4 py-3 text-base text-ink placeholder:text-ink-muted focus:outline-none focus:ring-2 focus:ring-brand-blue-500 focus:ring-offset-2"
+              placeholder="Jane Smith"
+            />
+          </div>
+
+          <div>
+            <label for="email" class="block text-sm font-semibold text-ink mb-2">Email address <span aria-hidden="true">*</span></label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              maxlength="254"
+              autocomplete="email"
+              class="w-full rounded-lg border border-border bg-surface px-4 py-3 text-base text-ink placeholder:text-ink-muted focus:outline-none focus:ring-2 focus:ring-brand-blue-500 focus:ring-offset-2"
+              placeholder="jane@company.com"
+            />
+          </div>
+
+          <div>
+            <label for="company" class="block text-sm font-semibold text-ink mb-2">Company name <span class="text-ink-muted font-normal">(optional)</span></label>
+            <input
+              type="text"
+              id="company"
+              name="company"
+              maxlength="200"
+              autocomplete="organization"
+              class="w-full rounded-lg border border-border bg-surface px-4 py-3 text-base text-ink placeholder:text-ink-muted focus:outline-none focus:ring-2 focus:ring-brand-blue-500 focus:ring-offset-2"
+              placeholder="Acme Corp"
+            />
+          </div>
+
+          <div>
+            <label for="description" class="block text-sm font-semibold text-ink mb-2">Brief description of your need <span aria-hidden="true">*</span></label>
+            <p class="text-sm text-ink-muted mb-2">Keep it high level — no sensitive details or confidential information at this stage.</p>
+            <textarea
+              id="description"
+              name="description"
+              required
+              maxlength="2000"
+              rows="5"
+              class="w-full rounded-lg border border-border bg-surface px-4 py-3 text-base text-ink placeholder:text-ink-muted focus:outline-none focus:ring-2 focus:ring-brand-blue-500 focus:ring-offset-2 resize-y"
+              placeholder="We're a SaaS company closing our first enterprise contracts and need help with MSA review..."
+            ></textarea>
+          </div>
+
+          <!-- FORM-02: ABA 477R disclaimer ABOVE the submit button — uses FIRM constant, never hardcoded -->
+          <div
+            class="border-l-4 border-brand-blue-500 bg-surface-muted px-6 py-4 text-sm text-ink-muted leading-relaxed rounded-r-lg"
+            role="note"
+            aria-label="Legal disclaimer"
+          >
+            <strong class="text-ink">Note:</strong> {FIRM.noAttorneyClientDisclaimer}
+          </div>
+
+          <button
+            type="submit"
+            class="inline-block bg-brand-blue-500 hover:bg-brand-blue-600 text-white text-base font-semibold py-3 px-8 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-brand-blue-500 focus:ring-offset-2"
+          >
+            Send Message
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
 </MarketingLayout>

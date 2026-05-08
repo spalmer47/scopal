@@ -1,0 +1,39 @@
+---
+import MarketingLayout from '../../layouts/MarketingLayout.astro';
+import { FIRM } from '../../lib/constants';
+---
+<MarketingLayout
+  title="Message Received — Annandale, NJ | Scopal Firm"
+  description="Your message has been received. Scott Palmer will respond within 2 business days."
+  noindex={true}
+>
+  <section class="bg-surface py-16 md:py-24">
+    <div class="mx-auto max-w-[1200px] px-md md:px-lg lg:px-xl">
+      <div class="max-w-2xl">
+        <h1 class="font-display font-semibold text-4xl md:text-5xl text-ink leading-[1.15]">
+          Message Received
+        </h1>
+
+        <p class="mt-6 text-base md:text-lg leading-relaxed text-ink-muted">
+          Thank you for reaching out. Scott reads every message personally and responds within 2 business days.
+        </p>
+
+        <div
+          class="mt-8 border-l-4 border-brand-blue-500 bg-surface-muted px-6 py-4 text-sm text-ink-muted leading-relaxed rounded-r-lg"
+          role="note"
+          aria-label="Legal disclaimer"
+        >
+          <strong class="text-ink">Important:</strong> {FIRM.noAttorneyClientDisclaimer}
+        </div>
+
+        <p class="mt-8 text-base text-ink-muted">
+          While you wait, you may find our{' '}
+          <a href="/blog" class="underline underline-offset-2 hover:text-brand-blue-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue-500 transition-colors">
+            legal insights blog
+          </a>{' '}
+          useful.
+        </p>
+      </div>
+    </div>
+  </section>
+</MarketingLayout>
