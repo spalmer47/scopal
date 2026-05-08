@@ -1,0 +1,47 @@
+---
+import MarketingLayout from '../../layouts/MarketingLayout.astro';
+import { FIRM } from '../../lib/constants';
+---
+<MarketingLayout
+  title="Legal Disclaimer — Annandale, NJ | Scopal Firm"
+  description="Legal disclaimer, no attorney-client relationship notice, and jurisdictional information for Scopal Firm, LLC."
+  noindex={false}
+>
+  <section class="bg-surface py-16 md:py-24">
+    <div class="mx-auto max-w-[1200px] px-md md:px-lg lg:px-xl">
+      <div class="max-w-2xl">
+        <h1 class="font-display font-semibold text-4xl md:text-5xl text-ink leading-[1.15]">
+          Legal Disclaimer
+        </h1>
+
+        <p class="mt-6 text-base leading-relaxed text-ink-muted">
+          <strong class="text-ink">No Attorney-Client Relationship.</strong> {FIRM.noAttorneyClientDisclaimer}
+        </p>
+
+        <p class="mt-6 text-base leading-relaxed text-ink-muted">
+          <strong class="text-ink">Informational Purposes Only.</strong> The information on this website is provided for general informational purposes and does not constitute legal advice. You should not act on any information on this site without first seeking the advice of an attorney. Prior results do not guarantee a similar outcome.
+        </p>
+
+        <p class="mt-6 text-base leading-relaxed text-ink-muted">
+          <strong class="text-ink">Attorney Advertising.</strong> {FIRM.attorneyAdvertising}
+        </p>
+
+        <p class="mt-6 text-base leading-relaxed text-ink-muted">
+          <strong class="text-ink">Jurisdictional Notice.</strong> {FIRM.jurisdictionDisclaimer}
+        </p>
+
+        <p class="mt-6 text-base leading-relaxed text-ink-muted">
+          <strong class="text-ink">New Jersey Advertising Notice.</strong> No aspect of this advertisement has been approved by the Supreme Court of New Jersey.
+        </p>
+
+        <p class="mt-6 text-base leading-relaxed text-ink-muted">
+          <strong class="text-ink">Responsible Attorney.</strong> {FIRM.responsibleAttorney}, {FIRM.legalName}.
+        </p>
+
+        <p class="mt-10 text-sm text-ink-muted">
+          Effective date: May 2026
+        </p>
+      </div>
+    </div>
+  </section>
+</MarketingLayout>

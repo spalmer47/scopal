@@ -21,8 +21,13 @@ const barStatus = formatBarStatus();
     <FooterDisclaimer />
   </div>
   <div class="border-t border-[oklch(0.30_0.04_250)]">
-    <p class="mx-auto max-w-[1200px] px-md md:px-lg lg:px-xl py-md text-sm">
-      &copy; {year} {FIRM.legalName}. All rights reserved.
-    </p>
+    <div class="mx-auto max-w-[1200px] px-md md:px-lg lg:px-xl py-md flex flex-wrap gap-4 items-center justify-between text-sm">
+      <p>&copy; {year} {FIRM.legalName}. All rights reserved.</p>
+      <nav aria-label="Legal pages" class="flex flex-wrap gap-4">
+        <a href="/legal/privacy" class="underline underline-offset-2 hover:text-brand-blue-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue-500 transition-colors">Privacy Policy</a>
+        <a href="/legal/terms" class="underline underline-offset-2 hover:text-brand-blue-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue-500 transition-colors">Terms of Use</a>
+        <a href="/legal/disclaimer" class="underline underline-offset-2 hover:text-brand-blue-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue-500 transition-colors">Disclaimer</a>
+      </nav>
+    </div>
   </div>
 </footer>

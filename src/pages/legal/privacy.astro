@@ -1,0 +1,52 @@
+---
+import MarketingLayout from '../../layouts/MarketingLayout.astro';
+import { FIRM } from '../../lib/constants';
+---
+<MarketingLayout
+  title="Privacy Policy — Annandale, NJ | Scopal Firm"
+  description="Privacy policy for Scopal Firm, LLC — how we collect, use, and protect the information you share with us."
+>
+  <section class="bg-surface py-16 md:py-24">
+    <div class="mx-auto max-w-[1200px] px-md md:px-lg lg:px-xl">
+      <div class="max-w-2xl">
+        <h1 class="font-display font-semibold text-4xl md:text-5xl text-ink leading-[1.15]">
+          Privacy Policy
+        </h1>
+
+        <p class="mt-6 text-base leading-relaxed text-ink-muted">
+          <strong class="text-ink">Information We Collect.</strong> When you submit the contact form on this website, we collect the information you provide: your name, email address, company name, and a brief description of your legal need. We do not collect information about your visit beyond what is necessary to deliver and secure this website.
+        </p>
+
+        <p class="mt-6 text-base leading-relaxed text-ink-muted">
+          <strong class="text-ink">How We Use Your Information.</strong> We use the information you submit to respond to your inquiry. We do not sell your information to third parties, and we do not share it except with the email delivery service we use to receive your message.
+        </p>
+
+        <p class="mt-6 text-base leading-relaxed text-ink-muted">
+          <strong class="text-ink">Third-Party Services.</strong> This website is hosted on Vercel and uses an email delivery service to transmit contact form submissions to our office. These providers process data only as needed to deliver the service and are bound by their own privacy policies.
+        </p>
+
+        <p class="mt-6 text-base leading-relaxed text-ink-muted">
+          <strong class="text-ink">Cookies and Analytics.</strong> This website does not use third-party tracking cookies or behavioral advertising. Basic analytics may be collected by the hosting provider.
+        </p>
+
+        <p class="mt-6 text-base leading-relaxed text-ink-muted">
+          <strong class="text-ink">Data Retention.</strong> Contact form submissions are retained only as long as necessary to respond to your inquiry. We do not maintain a marketing database of website visitors.
+        </p>
+
+        <p class="mt-6 text-base leading-relaxed text-ink-muted">
+          <strong class="text-ink">Contact.</strong> For questions about this policy or to request deletion of your information, contact us at{' '}
+          <a
+            href={`mailto:${FIRM.email}`}
+            class="underline underline-offset-2 hover:text-brand-blue-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue-500"
+          >
+            {FIRM.email}
+          </a>.
+        </p>
+
+        <p class="mt-10 text-sm text-ink-muted">
+          Effective date: May 2026
+        </p>
+      </div>
+    </div>
+  </section>
+</MarketingLayout>

@@ -1,0 +1,49 @@
+---
+import MarketingLayout from '../../layouts/MarketingLayout.astro';
+import { FIRM } from '../../lib/constants';
+---
+<MarketingLayout
+  title="Accessibility Statement — Annandale, NJ | Scopal Firm"
+  description="Scopal Firm is committed to making this website accessible to everyone. Learn about our WCAG 2.1 AA compliance efforts."
+>
+  <section class="bg-surface py-16 md:py-24">
+    <div class="mx-auto max-w-[1200px] px-md md:px-lg lg:px-xl">
+      <div class="max-w-2xl">
+        <h1 class="font-display font-semibold text-4xl md:text-5xl text-ink leading-[1.15]">
+          Accessibility Statement
+        </h1>
+
+        <p class="mt-6 text-base leading-relaxed text-ink-muted">
+          {FIRM.legalName} is committed to making this website accessible to all visitors, including people with disabilities. We aim to meet the Web Content Accessibility Guidelines (WCAG) 2.1 Level AA standard.
+        </p>
+
+        <p class="mt-6 text-base leading-relaxed text-ink-muted">
+          <strong class="text-ink">Measures Taken.</strong> We test this website for accessibility using automated tools (axe-core) and keyboard navigation testing on every code change. Our CI pipeline blocks merges that introduce accessibility regressions.
+        </p>
+
+        <p class="mt-6 text-base leading-relaxed text-ink-muted">
+          <strong class="text-ink">Technical Prerequisites.</strong> This site requires a modern browser with JavaScript enabled for some interactive features (including the contact form). Core content is accessible without JavaScript.
+        </p>
+
+        <p class="mt-6 text-base leading-relaxed text-ink-muted">
+          <strong class="text-ink">Known Limitations.</strong> We are not aware of any known accessibility failures at this time. If you encounter a barrier, please let us know.
+        </p>
+
+        <p class="mt-6 text-base leading-relaxed text-ink-muted">
+          <strong class="text-ink">Contact.</strong> If you experience difficulty accessing any content on this website, please contact us at{' '}
+          <a
+            href={`mailto:${FIRM.email}`}
+            class="underline underline-offset-2 hover:text-brand-blue-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue-500"
+          >
+            {FIRM.email}
+          </a>{' '}
+          and we will respond within 2 business days.
+        </p>
+
+        <p class="mt-10 text-sm text-ink-muted">
+          Last reviewed: May 2026
+        </p>
+      </div>
+    </div>
+  </section>
+</MarketingLayout>
