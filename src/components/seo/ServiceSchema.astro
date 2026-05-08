@@ -1,0 +1,24 @@
+---
+import { FIRM } from '../../lib/constants';
+interface Props {
+  name: string;
+  description: string;
+}
+const { name, description } = Astro.props;
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name,
+  description,
+  provider: {
+    '@type': 'LegalService',
+    name: FIRM.legalName,
+    url: FIRM.url,
+  },
+  areaServed: {
+    '@type': FIRM.areaServed.type,
+    name: FIRM.areaServed.name,
+  },
+};
+---
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

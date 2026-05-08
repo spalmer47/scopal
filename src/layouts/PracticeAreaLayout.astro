@@ -1,0 +1,49 @@
+---
+import MarketingLayout from './MarketingLayout.astro';
+import CTASection from '../components/sections/CTASection.astro';
+import DisclaimerCallout from '../components/legal/DisclaimerCallout.astro';
+import FAQSchema from '../components/seo/FAQSchema.astro';
+import BreadcrumbSchema from '../components/seo/BreadcrumbSchema.astro';
+import ServiceSchema from '../components/seo/ServiceSchema.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  faqs: Array<{ q: string; a: string }>;
+  slug: string;
+  serviceDescription?: string;
+}
+const { title, description, faqs, slug, serviceDescription } = Astro.props;
+
+const breadcrumbs = [
+  { name: 'Home', url: '/' },
+  { name: title, url: `/practice-areas/${slug}` },
+];
+---
+<MarketingLayout {title} {description}>
+  <FAQSchema {faqs} />
+  <BreadcrumbSchema items={breadcrumbs} />
+  <ServiceSchema name={title} description={serviceDescription ?? description} />
+  <article class="mx-auto max-w-[1200px] px-md md:px-lg lg:px-xl py-12 md:py-16">
+    <DisclaimerCallout />
+    <div class="prose prose-lg max-w-prose mx-auto mt-8">
+      <slot />
+    </div>
+    {faqs.length > 0 && (
+      <section aria-labelledby="faq-heading" class="mt-16 max-w-prose mx-auto">
+        <h2 id="faq-heading" class="font-display font-semibold text-2xl md:text-[28px] text-ink leading-[1.25]">
+          Frequently Asked Questions
+        </h2>
+        <dl class="mt-8 space-y-8">
+          {faqs.map(({ q, a }) => (
+            <div>
+              <dt class="font-semibold text-ink">{q}</dt>
+              <dd class="mt-2 text-base leading-relaxed text-ink-muted">{a}</dd>
+            </div>
+          ))}
+        </dl>
+      </section>
+    )}
+  </article>
+  <CTASection />
+</MarketingLayout>

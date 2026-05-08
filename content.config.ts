@@ -52,4 +52,13 @@ const team = defineCollection({
   }),
 });
 
-export const collections = { blog, practiceAreas, team };
+const coaching = defineCollection({
+  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/coaching' }),
+  schema: z.object({
+    title: z.string(),
+    description: z.string().max(160),
+    audience: z.string(),
+  }),
+});
+
+export const collections = { blog, practiceAreas, team, coaching };

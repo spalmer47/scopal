@@ -15,7 +15,41 @@ import { FIRM } from '../../lib/constants';
 
     <!-- Desktop nav + CTA (hidden on mobile) -->
     <nav aria-label="Main navigation" class="hidden md:flex items-center gap-8">
-      <a href="/practice-areas" class="text-base text-ink hover:text-brand-blue-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue-500 transition-colors">Practice Areas</a>
+
+      <!-- Practice Areas dropdown -->
+      <div class="relative">
+        <button
+          id="practice-btn"
+          type="button"
+          aria-haspopup="true"
+          aria-expanded="false"
+          aria-controls="practice-dropdown"
+          class="text-base text-ink hover:text-brand-blue-500 flex items-center gap-1 transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue-500"
+        >
+          Practice Areas
+          <svg width="12" height="8" viewBox="0 0 12 8" aria-hidden="true" focusable="false">
+            <path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+          </svg>
+        </button>
+        <ul
+          id="practice-dropdown"
+          hidden
+          class="absolute top-full left-0 mt-1 w-56 bg-surface border border-border rounded-lg shadow-md py-2 z-50"
+        >
+          <li>
+            <a href="/practice-areas/corporate-law" class="block px-4 py-2 text-base text-ink hover:text-brand-blue-500 hover:bg-surface-muted transition-colors">
+              Corporate Law
+            </a>
+          </li>
+          <li>
+            <a href="/practice-areas/fractional-general-counsel" class="block px-4 py-2 text-base text-ink hover:text-brand-blue-500 hover:bg-surface-muted transition-colors">
+              Fractional GC
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <a href="/coaching" class="text-base text-ink hover:text-brand-blue-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue-500 transition-colors">Coaching</a>
       <a href="/attorneys/scott-palmer" class="text-base text-ink hover:text-brand-blue-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue-500 transition-colors">Scott Palmer</a>
       <a href="/pricing" class="text-base text-ink hover:text-brand-blue-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue-500 transition-colors">Pricing</a>
       <a
@@ -35,7 +69,6 @@ import { FIRM } from '../../lib/constants';
       aria-label="Open navigation menu"
       class="md:hidden p-3 text-ink hover:text-ink-muted focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue-500"
     >
-      <!-- 3-bar hamburger icon — 20px wide, 2px strokes, 6px gap -->
       <svg width="20" height="14" viewBox="0 0 20 14" fill="none" aria-hidden="true" focusable="false">
         <rect y="0"  width="20" height="2" rx="1" fill="currentColor"/>
         <rect y="6"  width="20" height="2" rx="1" fill="currentColor"/>
@@ -44,7 +77,7 @@ import { FIRM } from '../../lib/constants';
     </button>
   </div>
 
-  <!-- Mobile nav panel (starts hidden; toggled by <script> below) -->
+  <!-- Mobile nav panel -->
   <div
     id="mobile-nav"
     class="hidden md:hidden bg-surface border-b border-border"
@@ -52,7 +85,20 @@ import { FIRM } from '../../lib/constants';
     aria-label="Mobile navigation"
   >
     <div class="mx-auto max-w-[1200px] px-md py-6 flex flex-col gap-6">
-      <a href="/practice-areas" class="text-base text-ink hover:text-brand-blue-500 py-[12px] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue-500">Practice Areas</a>
+      <!-- Practice Areas disclosure group -->
+      <details class="group">
+        <summary class="text-base text-ink hover:text-brand-blue-500 py-[12px] cursor-pointer list-none flex items-center justify-between focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue-500">
+          Practice Areas
+          <svg width="12" height="8" viewBox="0 0 12 8" aria-hidden="true" class="transition-transform group-open:rotate-180">
+            <path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+          </svg>
+        </summary>
+        <div class="pl-4 flex flex-col gap-3 mt-2">
+          <a href="/practice-areas/corporate-law" class="text-base text-ink hover:text-brand-blue-500 py-1 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue-500">Corporate Law</a>
+          <a href="/practice-areas/fractional-general-counsel" class="text-base text-ink hover:text-brand-blue-500 py-1 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue-500">Fractional GC</a>
+        </div>
+      </details>
+      <a href="/coaching" class="text-base text-ink hover:text-brand-blue-500 py-[12px] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue-500">Coaching</a>
       <a href="/attorneys/scott-palmer" class="text-base text-ink hover:text-brand-blue-500 py-[12px] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue-500">Scott Palmer</a>
       <a href="/pricing" class="text-base text-ink hover:text-brand-blue-500 py-[12px] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue-500">Pricing</a>
       <a
@@ -66,6 +112,7 @@ import { FIRM } from '../../lib/constants';
 </header>
 
 <script>
+  // Hamburger toggle
   const hamburger = document.getElementById('hamburger') as HTMLButtonElement | null;
   const mobileNav = document.getElementById('mobile-nav') as HTMLElement | null;
 
@@ -80,13 +127,44 @@ import { FIRM } from '../../lib/constants';
       mobileNav.classList.toggle('hidden');
     });
 
-    // Close on Escape key (accessibility requirement per UI-SPEC)
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && hamburger.getAttribute('aria-expanded') === 'true') {
         hamburger.setAttribute('aria-expanded', 'false');
         hamburger.setAttribute('aria-label', 'Open navigation menu');
         mobileNav.classList.add('hidden');
         hamburger.focus();
+      }
+    });
+  }
+
+  // Practice Areas desktop dropdown
+  const practiceBtn = document.getElementById('practice-btn') as HTMLButtonElement | null;
+  const practiceDropdown = document.getElementById('practice-dropdown') as HTMLElement | null;
+
+  if (practiceBtn && practiceDropdown) {
+    practiceBtn.addEventListener('click', () => {
+      const isOpen = practiceBtn.getAttribute('aria-expanded') === 'true';
+      practiceBtn.setAttribute('aria-expanded', String(!isOpen));
+      practiceDropdown.hidden = isOpen;
+    });
+
+    // Close on outside click
+    document.addEventListener('click', (e) => {
+      if (
+        !practiceBtn.contains(e.target as Node) &&
+        !practiceDropdown.contains(e.target as Node)
+      ) {
+        practiceBtn.setAttribute('aria-expanded', 'false');
+        practiceDropdown.hidden = true;
+      }
+    });
+
+    // Close on Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && practiceBtn.getAttribute('aria-expanded') === 'true') {
+        practiceBtn.setAttribute('aria-expanded', 'false');
+        practiceDropdown.hidden = true;
+        practiceBtn.focus();
       }
     });
   }

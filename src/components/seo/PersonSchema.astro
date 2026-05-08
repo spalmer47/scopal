@@ -1,0 +1,28 @@
+---
+import { FIRM, ATTORNEYS } from '../../lib/constants';
+const scott = ATTORNEYS['scott-palmer'];
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: scott.name,
+  jobTitle: scott.role,
+  url: `${FIRM.url}/attorneys/scott-palmer`,
+  worksFor: {
+    '@type': 'LegalService',
+    name: FIRM.legalName,
+    url: FIRM.url,
+  },
+  alumniOf: [
+    { '@type': 'EducationalOrganization', name: 'University of Baltimore School of Law' },
+    { '@type': 'EducationalOrganization', name: 'University of Maryland, College Park' },
+  ],
+  hasCredential: scott.barAdmissions
+    .filter((b) => b.status === 'active')
+    .map((b) => ({
+      '@type': 'EducationalOccupationalCredential',
+      credentialCategory: 'Bar Admission',
+      recognizedBy: { '@type': 'GovernmentOrganization', name: `${b.state} State Bar` },
+    })),
+};
+---
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />
