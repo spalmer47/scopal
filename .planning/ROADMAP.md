@@ -102,7 +102,20 @@ Plans:
   3. `/blog/` lists posts with pagination, `/blog/[slug]` renders MDX with auto-injected disclaimer + `Article` JSON-LD + breadcrumbs + CTA, drafts are filtered from production, `/rss.xml` validates, and at least one real post by Scott A. Palmer is published at launch.
   4. Every page is covered by the `<SEO />` component (≤60-char title in the `${pageTitle} — Annandale, NJ | Scopal Firm` format, ≤155-char description, canonical, OG image, JSON-LD); `sitemap.xml` auto-generates, `robots.txt` allows crawlers + disallows `/api/`, and `/legal/disclaimer`, `/legal/privacy`, `/legal/terms`, `/legal/accessibility-statement` are published.
   5. A pre-launch audit passes: `dist/` contains no leaked credentials, all secrets live only in Vercel env vars, RLS is on if Supabase is used, `<Testimonial>`/`<CaseResult>` won't build without a `disclaimer` prop, all images route through `astro:assets` with committed sources ≤200 KB and self-hosted fonts (max 2 families × 2 weights, above-fold preloaded, `font-display: swap`), and Lighthouse mobile ≥ 90 with LCP < 2.0s, CLS < 0.05, INP < 100ms across all page types.
-**Plans:** TBD
+**Plans:** 5 plans
+Plans:
+**Wave 0** *(no dependencies — prerequisite assets)*
+- [ ] 04-00-PLAN.md — Font files (Inter 400/600 + Fraunces 600 woff2) + OG default image + @font-face rules + BaseLayout preload links + Testimonial/CaseResult stub components + first blog post MDX
+
+**Wave 1** *(parallel — no file conflicts; both depend on 04-00)*
+- [ ] 04-01-PLAN.md — Blog infrastructure: BlogPostLayout + ArticleSchema + [blog/...page].astro paginated index + [blog/slug].astro post route + rss.xml.js RSS feed + Header Blog nav link
+- [ ] 04-02-PLAN.md — SEO + Legal: SEO.astro OG image fallback upgrade + four /legal/* pages + Footer privacy/terms/disclaimer links
+
+**Wave 2** *(blocked on Wave 1 — autonomous: false — Q3 provider checkpoint)*
+- [ ] 04-03-PLAN.md — Contact form: src/actions/index.ts (all 7 FORM-03 controls) + contact.astro replacement + contact/thank-you.astro; provider choice checkpoint presented to Scott
+
+**Wave 3** *(blocked on Wave 2 — final launch gate)*
+- [ ] 04-04-PLAN.md — Pre-launch audit: SEC-01..05 verification + PERF-01..03 Lighthouse check + image/font audit + full page count verification + human-verify checkpoint
 **UI hint:** yes
 
 ---
@@ -114,7 +127,7 @@ Plans:
 | 1. Foundation + Live Skeleton | 5/5 | Complete    | 2026-05-07 |
 | 2. Homepage + Conversion Spine | 2/2 | Complete    | 2026-05-07 |
 | 3. Firm Substance — People, Practice Areas, Pricing | 5/5 | Complete | 2026-05-07 |
-| 4. Lead Capture + Content + Launch Hardening | 0/0 | Not started | — |
+| 4. Lead Capture + Content + Launch Hardening | 0/5 | Planned — ready to execute | — |
 
 ---
 
@@ -142,3 +155,4 @@ Plans:
 ---
 *Roadmap created: 2026-05-07 from PROJECT.md + REQUIREMENTS.md + research/SUMMARY.md*
 *Phase 3 plans added: 2026-05-07*
+*Phase 4 plans added: 2026-05-08*
