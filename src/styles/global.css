@@ -85,3 +85,19 @@
   font-display: swap;
   src: url('/fonts/Fraunces-SemiBold.woff2') format('woff2');
 }
+
+/* MAX-WIDTH FIX — Tailwind v4 uses --spacing-* tokens for ALL sizing utilities,
+ * so --spacing-2xl:48px was overriding max-w-2xl to 48px instead of 42rem.
+ * Declarations outside any @layer always beat layered (Tailwind-generated) rules.
+ */
+.max-w-xs  { max-width: 20rem;  } /* 320px  */
+.max-w-sm  { max-width: 24rem;  } /* 384px  */
+.max-w-md  { max-width: 28rem;  } /* 448px  */
+.max-w-lg  { max-width: 32rem;  } /* 512px  */
+.max-w-xl  { max-width: 36rem;  } /* 576px  */
+.max-w-2xl { max-width: 42rem;  } /* 672px  */
+.max-w-3xl { max-width: 48rem;  } /* 768px  */
+.max-w-4xl { max-width: 56rem;  } /* 896px  */
+.max-w-5xl { max-width: 64rem;  } /* 1024px */
+.max-w-6xl { max-width: 72rem;  } /* 1152px */
+.max-w-7xl { max-width: 80rem;  } /* 1280px */
