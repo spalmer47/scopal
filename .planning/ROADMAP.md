@@ -10,7 +10,7 @@ A SaaS founder lands on the site, recognizes their situation, and gets in touch.
 
 - [x] **Phase 1: Foundation + Live Skeleton** — Astro 6 / Tailwind v4 / Vercel deploy with security headers, CI guardrails, layouts, constants, and a placeholder homepage live at scopalfirm.com (completed 2026-05-07)
 - [x] **Phase 2: Homepage + Conversion Spine** — StoryBrand homepage, persistent CTA, trust strip, and the "proactive vs reactive" insight that makes a SaaS founder say "this is for me" (completed 2026-05-07)
-- [ ] **Phase 3: Firm Substance — People, Practice Areas, Pricing** — Three practice area pages, Scott's attorney bio, Rachel's team page, and the pricing/engagement model page
+- [x] **Phase 3: Firm Substance — People, Practice Areas, Pricing** — Three practice area pages, Scott's attorney bio, Rachel's team page, and the pricing/engagement model page (completed 2026-05-07)
 - [ ] **Phase 4: Lead Capture + Content + Launch Hardening** — Contact form (with ABA 477R + 7 server controls), blog system with one published post, full SEO/legal/security/performance hardening for public launch
 
 ---
@@ -78,17 +78,17 @@ Plans:
 **Plans:** 5 plans
 Plans:
 **Wave 0** *(blocking checkpoint — Rachel's headshot must be committed before Wave 1)*
-- [~] 03-00-PLAN.md — Headshot prerequisite: Task 1 done (Scott's headshot 296 KB → 44 KB, commit 62629f6); PAUSED at Task 2 awaiting Rachel's headshot
+- [x] 03-00-PLAN.md — Headshot prerequisite: Scott's headshot 296 KB → 44 KB (commit 62629f6); Rachel placeholder committed (commit c189abc)
 
 **Wave 1a**
-- [ ] 03-01-PLAN.md — Infrastructure: coaching collection (content.config.ts), 4 schema components (FAQSchema, BreadcrumbSchema, PersonSchema, ServiceSchema), DisclaimerCallout, PracticeAreaLayout, Header dropdown + Coaching nav link
+- [x] 03-01-PLAN.md — Infrastructure: coaching collection (content.config.ts), 4 schema components (FAQSchema, BreadcrumbSchema, PersonSchema, ServiceSchema), DisclaimerCallout, PracticeAreaLayout, Header dropdown + Coaching nav link (commit 57dd69e)
 
 **Wave 1b** *(blocked on Wave 1a — 03-02 depends on PracticeAreaLayout from 03-01)*
-- [ ] 03-02-PLAN.md — Practice area content: [slug].astro dynamic routing template + corporate-law.mdx + fractional-general-counsel.mdx (800–1,500+ words each, 3–5 FAQs each)
+- [x] 03-02-PLAN.md — Practice area content: [slug].astro dynamic routing template + corporate-law.mdx + fractional-general-counsel.mdx (800–1,500+ words each, 3–5 FAQs each); fix: moved content.config.ts from root to src/ (commit 23e8890)
 
 **Wave 2** *(parallel — no file conflicts between 03-03 and 03-04)*
-- [ ] 03-03-PLAN.md — Static pages: coaching.astro (renders coaching MDX via collection) + pricing.astro (Unlimited GC Access, $995/month, 5 service area cards, comparison context)
-- [ ] 03-04-PLAN.md — Bio pages: scott-palmer.astro (PersonSchema, formatBarStatus(), astro:assets headshot, client-benefit H1) + rachel-palmer.astro (Head of Operations, /team/ URL, no attorney schema)
+- [x] 03-03-PLAN.md — Static pages: coaching.astro (renders coaching MDX via collection) + pricing.astro (Unlimited GC Access, $995/month, 5 service area cards, comparison context) (commit e21e6b3)
+- [x] 03-04-PLAN.md — Bio pages: scott-palmer.astro (PersonSchema, formatBarStatus(), astro:assets headshot, client-benefit H1) + rachel-palmer.astro (Head of Operations, /team/ URL, no attorney schema) (commit e21e6b3)
 **UI hint:** yes
 
 ### Phase 4: Lead Capture + Content + Launch Hardening
@@ -113,7 +113,7 @@ Plans:
 |-------|----------------|--------|-----------|
 | 1. Foundation + Live Skeleton | 5/5 | Complete    | 2026-05-07 |
 | 2. Homepage + Conversion Spine | 2/2 | Complete    | 2026-05-07 |
-| 3. Firm Substance — People, Practice Areas, Pricing | 0/5 | In progress (paused at 03-00 checkpoint) | — |
+| 3. Firm Substance — People, Practice Areas, Pricing | 5/5 | Complete | 2026-05-07 |
 | 4. Lead Capture + Content + Launch Hardening | 0/0 | Not started | — |
 
 ---

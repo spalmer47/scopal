@@ -3,20 +3,20 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 current_phase: 3
-status: ready_to_execute
+status: ready_to_plan
 last_updated: "2026-05-07T00:00:00.000Z"
 progress:
   total_phases: 4
-  completed_phases: 2
+  completed_phases: 3
   total_plans: 12
-  completed_plans: 7
-  percent: 50
+  completed_plans: 12
+  percent: 75
 ---
 
 # Project State — Scopal Firm Website
 
-**Status:** Paused at checkpoint — Phase 3, Plan 03-00 Task 2 (Rachel's headshot)
-**Current Phase:** 3
+**Status:** Phase 3 complete — ready to plan Phase 4
+**Current Phase:** 4
 **Last Updated:** 2026-05-07
 
 ## Project Reference
@@ -31,7 +31,7 @@ See: .planning/PROJECT.md
 |---|-------|--------|--------------|
 | 1 | Foundation + Live Skeleton | Complete | FOUND-01..07 (7) |
 | 2 | Homepage + Conversion Spine | Complete (2/2 plans done) | HOME-01..07 (7) |
-| 3 | Firm Substance — People, Practice Areas, Pricing | Ready to execute (5 plans) | PRAC-01..05, TEAM-01..04, PRICE-01..03 (12) |
+| 3 | Firm Substance — People, Practice Areas, Pricing | Complete (5/5 plans done) | PRAC-01..05, TEAM-01..04, PRICE-01..03 (12) |
 | 4 | Lead Capture + Content + Launch Hardening | Not started | FORM-01..06, BLOG-01..05, SEO-01..05, LEGAL-01..04, SEC-01..05, PERF-01..03 (28) |
 
 **Coverage:** 47 / 47 v1 requirements mapped ✓
@@ -96,15 +96,23 @@ See: .planning/PROJECT.md
 
 ## Session Continuity
 
-- Paused at: 03-00-PLAN.md Task 2 — waiting for Rachel Palmer headshot to be committed to src/assets/team/rachel-palmer.jpg
-- Resume signal: "headshots ready" — once both headshots are committed, run `/gsd-execute-phase 3` to continue with Wave 1
-- Phase 3 planning complete: 2026-05-07 — 5 plans, 3 waves, verified by plan checker
-- Phase 3 context gathered: 2026-05-07 — see `03-CONTEXT.md`
+- Phase 3 complete: 2026-05-07 — 5 plans, 8 pages built, all passing
 - Working directory: `/Users/spalmer/Documents/Claude Code/Scopal Website`
 - Repo: https://github.com/spalmer47/scopal
 - Read on session start (per `.claude/CLAUDE.md`): `.planning/FIRM_BRIEF.md`, `.planning/LAW_FIRM_WEBSITE_GUIDE.md`.
-- 03-00 Task 1 completed: 1 file, commit 62629f6 (Scott's headshot optimized 296 KB → 44 KB)
-- 02-02 completed: 3 tasks, 10 files, d7d348b / 44be1ff / fc57f8f
+- Key fix: content.config.ts moved from repo root to src/ (Astro 6 searches srcDir, not root)
+- Key fix: getCollection uses camelCase key ('practiceAreas', 'coaching') not kebab-case
+- Rachel Palmer headshot is a gray placeholder — replace with real photo before launch
+- Phase 4 planning: run `/gsd-plan-phase 4` when ready to proceed
+
+## Phase 3 Commits
+
+| Commit | Plan | Description |
+|--------|------|-------------|
+| c189abc | 03-00 | Rachel placeholder headshot |
+| 57dd69e | 03-01 | Schema components, PracticeAreaLayout, Header dropdown |
+| 23e8890 | 03-02 | Practice area pages + content.config.ts path fix |
+| e21e6b3 | 03-03+04 | Coaching, pricing, bio, and team pages |
 
 ## Notes
 
