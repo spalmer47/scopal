@@ -21,7 +21,7 @@ const errorMessage = result?.error ? 'There was a problem sending your message. 
         <h1 class="font-display font-semibold text-4xl md:text-5xl text-ink leading-[1.15] mb-4">
           Get in Touch
         </h1>
-        <p class="text-base md:text-lg text-ink-muted leading-relaxed mb-10">
+        <p class="text-base md:text-lg text-ink-muted leading-relaxed mb-6">
           Tell us a bit about your situation. Scott responds within 2 business days.
         </p>
 
@@ -32,7 +32,7 @@ const errorMessage = result?.error ? 'There was a problem sending your message. 
         )}
 
         <!-- <form method="POST" action={actions.sendContact} novalidate class="space-y-6"> -->
-        <form action="https://api.web3forms.com/submit" method="POST" class="space-y-6">
+        <form action="https://api.web3forms.com/submit" method="POST" class="space-y-4">
         	<input type="hidden" name="access_key" value="36dbdae1-a3d9-4346-90ec-03dad20feac9">
         	<input type="hidden" name="redirect" value="https://scopalfirm.com/contact/thank-you.astro">
           <!-- Control 2: Honeypot field — CSS-positioned off-screen, NOT display:none
@@ -44,7 +44,7 @@ const errorMessage = result?.error ? 'There was a problem sending your message. 
           </div>
 
           <div>
-            <label for="name" class="block text-sm font-semibold text-ink mb-2">Your name <span aria-hidden="true">*</span></label>
+            <label for="name" class="block text-sm font-semibold text-ink mb-1">Your name <span aria-hidden="true">*</span></label>
             <input
               type="text"
               id="name"
@@ -57,7 +57,7 @@ const errorMessage = result?.error ? 'There was a problem sending your message. 
           </div>
 
           <div>
-            <label for="email" class="block text-sm font-semibold text-ink mb-2">Email address <span aria-hidden="true">*</span></label>
+            <label for="email" class="block text-sm font-semibold text-ink mb-1">Email address <span aria-hidden="true">*</span></label>
             <input
               type="email"
               id="email"
@@ -70,7 +70,7 @@ const errorMessage = result?.error ? 'There was a problem sending your message. 
           </div>
 
           <div>
-            <label for="company" class="block text-sm font-semibold text-ink mb-2">Company name <span class="text-ink-muted font-normal">(optional)</span></label>
+            <label for="company" class="block text-sm font-semibold text-ink mb-1">Company name <span class="text-ink-muted font-normal">(optional)</span></label>
             <input
               type="text"
               id="company"
@@ -82,7 +82,7 @@ const errorMessage = result?.error ? 'There was a problem sending your message. 
           </div>
 
           <div>
-            <label for="description" class="block text-sm font-semibold text-ink mb-2">Brief description of your need <span aria-hidden="true">*</span></label>
+            <label for="description" class="block text-sm font-semibold text-ink mb-1">Brief description of your need <span aria-hidden="true">*</span></label>
             <p class="text-sm text-ink-muted mb-2">Keep it high level — no sensitive details or confidential information at this stage.</p>
             <textarea
               id="description"
