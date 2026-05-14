@@ -18,7 +18,7 @@ const steps = [
   },
 ];
 ---
-<section class="bg-surface-muted py-12 md:py-16">
+<section class="bg-surface-muted py-12 md:py-16" data-animate>
   <div class="mx-auto max-w-[1200px] px-md md:px-lg lg:px-xl">
 
     <h2 class="font-display font-semibold text-2xl md:text-[28px] text-ink leading-[1.25] text-center mb-8">
@@ -27,7 +27,7 @@ const steps = [
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
       {steps.map((step) => (
-        <div class="bg-surface border border-border rounded-lg p-6 flex flex-col gap-4">
+        <div class="bg-surface border border-border rounded-lg p-6 flex flex-col gap-4" data-delay={String(step.number)}>
           <!-- Step number circle -->
           <div
             class="w-12 h-12 rounded-full bg-ink flex items-center justify-center flex-shrink-0 border-2 border-brand-orange-500"
