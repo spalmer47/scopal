@@ -32,20 +32,48 @@ const { title, description, ogImage, ogType = 'website', noindex = false, emitOr
   </head>
   <body class="min-h-screen flex flex-col bg-surface text-ink font-body">
     <script>
-      // Scroll-reveal: gate CSS on js-animate, then observe [data-animate] sections.
-      document.body.classList.add('js-animate');
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('in-view');
-              observer.unobserve(entry.target);
-            }
-          });
-        },
-        { threshold: 0.08, rootMargin: '0px 0px -40px 0px' }
-      );
-      document.querySelectorAll('[data-animate]').forEach((el) => observer.observe(el));
+      // Scroll-reveal animations.
+      // Only runs if the user hasn't requested reduced motion.
+      // Sets opacity/transform via inline styles (not CSS classes) to avoid
+      // race conditions with deferred module script execution.
+      (function () {
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+        const sections = Array.from(document.querySelectorAll('[data-animate]'));
+        if (!sections.length) return;
+
+        // Only hide sections that start below the visible area —
+        // never hide content that's already on screen when the page loads.
+        sections.forEach(function (el) {
+          if (el.getBoundingClientRect().top >= window.innerHeight) {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(24px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            // Staggered children (Plan step cards)
+            el.querySelectorAll('[data-delay]').forEach(function (child) {
+              child.style.transitionDelay = (parseInt(child.dataset.delay) * 0.1) + 's';
+            });
+          }
+        });
+
+        const observer = new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                var el = entry.target;
+                el.style.opacity = '1';
+                el.style.transform = 'translateY(0)';
+                observer.unobserve(el);
+              }
+            });
+          },
+          { threshold: 0.1 }
+        );
+
+        sections.forEach(function (el) {
+          if (el.style.opacity === '0') observer.observe(el);
+        });
+      })();
     </script>
     <a
       href="#main"

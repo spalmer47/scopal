@@ -91,27 +91,7 @@
  * so --spacing-2xl:48px was overriding max-w-2xl to 48px instead of 42rem.
  * Declarations outside any @layer always beat layered (Tailwind-generated) rules.
  */
-/* SCROLL ANIMATIONS — Option A
- * Gated on body.js-animate so content is never invisible if JS is slow or absent.
- * The IntersectionObserver script in BaseLayout.astro adds .js-animate to <body>
- * immediately, then adds .in-view to each [data-animate] element on scroll entry.
- * prefers-reduced-motion: the existing global rule sets transition-duration: 0.01ms,
- * which collapses the animation to instant — no visible motion, no invisible content.
- */
-body.js-animate [data-animate] {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.55s ease, transform 0.55s ease;
-}
-body.js-animate [data-animate].in-view {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Staggered children within an animated section */
-body.js-animate [data-animate] [data-delay="1"] { transition-delay: 0.1s; }
-body.js-animate [data-animate] [data-delay="2"] { transition-delay: 0.2s; }
-body.js-animate [data-animate] [data-delay="3"] { transition-delay: 0.3s; }
+/* SCROLL ANIMATIONS — styles applied via JS inline; no CSS gating needed */
 
 .max-w-xs  { max-width: 20rem;  } /* 320px  */
 .max-w-sm  { max-width: 24rem;  } /* 384px  */
