@@ -31,23 +31,9 @@ const { title, description, ogImage, ogType = 'website', noindex = false, emitOr
     {emitWebSiteSchema && <WebSiteSchema />}
   </head>
   <body class="min-h-screen flex flex-col bg-surface text-ink font-body">
-    <!-- IntersectionObserver: adds .in-view to [data-animate] elements as they
-         enter the viewport. The module script is deferred but the CSS gate above
-         has already set the initial invisible state before first paint. -->
-    <script>
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('in-view');
-              observer.unobserve(entry.target);
-            }
-          });
-        },
-        { threshold: 0.1 }
-      );
-      document.querySelectorAll('[data-animate]').forEach((el) => observer.observe(el));
-    </script>
+    <!-- External script — served from 'self' so the CSP allows it.
+         Adds .in-view to [data-animate] sections as they enter the viewport. -->
+    <script src="/js/scroll-animations.js" defer></script>
     <a
       href="#main"
       class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 focus:bg-surface focus:text-ink focus:px-md focus:py-sm focus:outline-2 focus:outline-offset-2 focus:outline-brand-blue-500"
