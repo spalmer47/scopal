@@ -119,6 +119,37 @@ html.scroll-ready [data-animate] [data-delay="3"] { transition-delay: 0.3s; }
   }
 }
 
+/* HERO ANIMATED GRADIENT
+ * Large gradient shifted slowly via background-position animation.
+ * background-position is GPU-composited — no layout/paint cost.
+ * Stops are all close navy variants so the shift is elegant, not flashy.
+ * prefers-reduced-motion: collapses to a static version of the same gradient.
+ */
+@keyframes hero-gradient-shift {
+  0%   { background-position: 0% 50%;   }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%;   }
+}
+
+.hero-gradient {
+  background: linear-gradient(
+    -45deg,
+    oklch(0.22 0.04 250),
+    oklch(0.25 0.09 265),
+    oklch(0.18 0.05 240),
+    oklch(0.24 0.06 255)
+  );
+  background-size: 400% 400%;
+  animation: hero-gradient-shift 12s ease infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-gradient {
+    animation: none;
+    background-size: 100% 100%;
+  }
+}
+
 .max-w-xs  { max-width: 20rem;  } /* 320px  */
 .max-w-sm  { max-width: 24rem;  } /* 384px  */
 .max-w-md  { max-width: 28rem;  } /* 448px  */
