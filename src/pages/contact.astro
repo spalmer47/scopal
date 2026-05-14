@@ -31,7 +31,10 @@ const errorMessage = result?.error ? 'There was a problem sending your message. 
           </div>
         )}
 
-        <form method="POST" action={actions.sendContact} novalidate class="space-y-6">
+        <!-- <form method="POST" action={actions.sendContact} novalidate class="space-y-6"> -->
+        <form action="https://api.web3forms.com/submit" method="POST" class="space-y-6">
+        	<input type="hidden" name="access_key" value="36dbdae1-a3d9-4346-90ec-03dad20feac9">
+        	<input type="hidden" name="redirect" value="https://scopalfirm.com/contact/thank-you.astro">
           <!-- Control 2: Honeypot field — CSS-positioned off-screen, NOT display:none
                (bots fill display:none fields; absolute positioning keeps it invisible to humans
                while remaining accessible to form-filling bots) -->
@@ -50,7 +53,6 @@ const errorMessage = result?.error ? 'There was a problem sending your message. 
               maxlength="100"
               autocomplete="name"
               class="w-full rounded-lg border border-border bg-surface px-4 py-3 text-base text-ink placeholder:text-ink-muted focus:outline-none focus:ring-2 focus:ring-brand-blue-500 focus:ring-offset-2"
-              placeholder="Jane Smith"
             />
           </div>
 
@@ -64,7 +66,6 @@ const errorMessage = result?.error ? 'There was a problem sending your message. 
               maxlength="254"
               autocomplete="email"
               class="w-full rounded-lg border border-border bg-surface px-4 py-3 text-base text-ink placeholder:text-ink-muted focus:outline-none focus:ring-2 focus:ring-brand-blue-500 focus:ring-offset-2"
-              placeholder="jane@company.com"
             />
           </div>
 
@@ -77,7 +78,6 @@ const errorMessage = result?.error ? 'There was a problem sending your message. 
               maxlength="200"
               autocomplete="organization"
               class="w-full rounded-lg border border-border bg-surface px-4 py-3 text-base text-ink placeholder:text-ink-muted focus:outline-none focus:ring-2 focus:ring-brand-blue-500 focus:ring-offset-2"
-              placeholder="Acme Corp"
             />
           </div>
 
@@ -91,7 +91,6 @@ const errorMessage = result?.error ? 'There was a problem sending your message. 
               maxlength="2000"
               rows="5"
               class="w-full rounded-lg border border-border bg-surface px-4 py-3 text-base text-ink placeholder:text-ink-muted focus:outline-none focus:ring-2 focus:ring-brand-blue-500 focus:ring-offset-2 resize-y"
-              placeholder="We're a SaaS company closing our first enterprise contracts and need help with MSA review..."
             ></textarea>
           </div>
 
