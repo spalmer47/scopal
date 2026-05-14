@@ -91,7 +91,33 @@
  * so --spacing-2xl:48px was overriding max-w-2xl to 48px instead of 42rem.
  * Declarations outside any @layer always beat layered (Tailwind-generated) rules.
  */
-/* SCROLL ANIMATIONS — styles applied via JS inline; no CSS gating needed */
+/* SCROLL ANIMATIONS — Option A
+ * html.scroll-ready is added by an is:inline script in <head> that runs
+ * synchronously BEFORE first paint, so the initial opacity:0 state is set
+ * before the browser renders anything. The IntersectionObserver module script
+ * adds .in-view as each section enters the viewport.
+ */
+html.scroll-ready [data-animate] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+html.scroll-ready [data-animate].in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+html.scroll-ready [data-animate] [data-delay="1"] { transition-delay: 0.1s; }
+html.scroll-ready [data-animate] [data-delay="2"] { transition-delay: 0.2s; }
+html.scroll-ready [data-animate] [data-delay="3"] { transition-delay: 0.3s; }
+
+@media (prefers-reduced-motion: reduce) {
+  html.scroll-ready [data-animate],
+  html.scroll-ready [data-animate].in-view {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
 
 .max-w-xs  { max-width: 20rem;  } /* 320px  */
 .max-w-sm  { max-width: 24rem;  } /* 384px  */
