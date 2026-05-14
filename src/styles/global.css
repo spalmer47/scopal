@@ -125,7 +125,7 @@ html.scroll-ready [data-animate] [data-delay="3"] { transition-delay: 0.3s; }
  * Data URI keeps it dependency-free with no extra file or network request.
  */
 .hero-pattern {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='500' height='500'%3E%3Ccircle cx='125' cy='125' r='150' fill='white' fill-opacity='0.04'/%3E%3Ccircle cx='375' cy='375' r='150' fill='white' fill-opacity='0.04'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='750' height='750'%3E%3Ccircle cx='188' cy='188' r='150' fill='white' fill-opacity='0.04'/%3E%3Ccircle cx='563' cy='563' r='150' fill='white' fill-opacity='0.04'/%3E%3C/svg%3E");
 }
 
 .max-w-xs  { max-width: 20rem;  } /* 320px  */
