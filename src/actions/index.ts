@@ -53,7 +53,7 @@ async function sendEmail(data: {
   const resend = new Resend(import.meta.env.RESEND_API_KEY);
   await resend.emails.send({
     // Control 7: Fixed From and Subject — NEVER user-supplied
-    from: 'contact@scopalfirm.com',
+    from: 'scott@updates.scopalfirm.com',
     to: FIRM.email,
     subject: 'New Contact Form Submission — Scopal Firm',
     html: `
